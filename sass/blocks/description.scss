@@ -1,0 +1,23 @@
+.description {
+  padding: 0 20px;
+
+  &__list {
+    @include ul-clear;
+  }
+
+  &__item {
+    margin-bottom: 10px;
+    padding-left: 35px;
+    position: relative;
+    text-align: left;
+
+    &::before {
+      content: url("../img/icon-check.png");
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 26px;
+      height: 26px;
+    }
+  }
+}

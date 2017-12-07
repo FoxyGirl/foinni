@@ -1,0 +1,131 @@
+html,
+body {
+  min-width: 320px;
+  font-family: $font-family-base;
+  font-size: $fsz-base;
+  font-weight: normal;
+  color: #000;
+  background-color: #ffffff;
+  box-sizing: border-box;
+}
+
+* {
+  box-sizing: inherit;
+
+  &::before,
+  &::after {
+    box-sizing: inherit;
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+h1 {
+  margin-top: 15px;
+  margin-bottom: 8px;
+  font-weight: 200;
+  font-size: 24px;
+  letter-spacing: 3px;
+  text-align: center;
+  text-transform: uppercase;
+
+  &::first-letter {
+    font-size: 37px;
+  }
+
+  @include respond(tablet) {
+      font-size: 32px;
+
+      &::first-letter {
+        font-size: 47px;
+      }
+  }
+
+  @include respond(desktop) {
+      font-size: 40px;
+
+      &::first-letter {
+        font-size: 55px;
+      }
+  }
+
+  @include respond(desktop-all) {
+      font-size: 49px;
+
+      &::first-letter {
+        font-size: 65px;
+      }
+  }
+}
+
+.visually-hidden:not(:focus):not(:active) {
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+
+  white-space: nowrap;
+
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.container {
+  min-width: 320px;
+  max-width: $bp-xlarge;
+  position: relative;
+  margin: 0 auto;
+  padding: 0 $indent;
+  text-align: center;
+  @include clearfix;
+}
+
+
+/********** Responsive ******/
+/*
+@include respond(mobile) {
+  h1 {
+    font-size: 24px;
+    color: green;
+
+    &::first-letter {
+      font-size: 37px;
+    }
+  }
+}
+
+@include respond(tablet) {
+  h1 {
+    font-size: 32px;
+    color: yellow;
+
+    &::first-letter {
+      font-size: 47px;
+    }
+  }
+}
+
+@include respond(desktop) {
+  h1 {
+    font-size: 40px;
+    color: red;
+
+    &::first-letter {
+      font-size: 55px;
+    }
+  }
+}
+
+@include respond(desktop-all) {
+  h1 {
+    color: blue;
+  }
+}
+*/

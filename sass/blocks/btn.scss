@@ -1,0 +1,86 @@
+.btn {
+  display: inline-block;
+  vertical-align: top;
+  box-sizing: border-box;
+  margin: 0 10px 20px;
+  padding: 16px 10px;
+  font-size: $fsz-btn-small;
+  font-weight: 200;
+  letter-spacing: 1px;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #ffffff;
+  background-color: $color-secondary;
+  border: none;
+  border-radius: $brd-rad;
+  outline: none;
+
+  @include respond(mobile-small) {
+    padding: 16px 20px;
+  }
+
+  @include respond(tablet) {
+    font-size: $fsz-btn;
+    padding: 16px 30px;
+    letter-spacing: 2px;
+  }
+
+  &:hover {
+    background-color: $color-btn-hover;
+  }
+
+  &:active {
+    background-color: $color-btn-active;
+  }
+
+  &--transparent {
+    color: #000;
+    background-color: transparent;
+    border: 1px solid #000;
+
+    &:hover {
+      color: #fff;
+      background-color: $color-secondary;
+      border-color: transparent;
+    }
+
+    &:active {
+      color: #fff;
+      background-color: rgba($color-btn-active, $opacity-btn);
+      border-color: transparent;
+    }
+
+  }
+
+  &.btn--phone {
+    background-color: $color-main;
+    color: #000;
+    border-radius: 8px;
+    padding: 5px 18px 10px;
+    order: 1;
+    width: 60%;
+    
+    &:hover {
+      background-color: $color-secondary;
+      color: #fff;
+
+      span {
+        border-color: #fff;
+      }
+    }
+
+    &:active {
+      background-color: rgba($color-secondary, $act-opacity);
+    }
+
+    span {
+      border-bottom: 1px dashed #000;
+    }
+
+    @include respond(tablet-small) {
+      order: 0;
+      width: auto;
+    }
+  }
+
+}

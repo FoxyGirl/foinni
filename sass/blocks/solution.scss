@@ -1,0 +1,161 @@
+.solution {
+  background-color: #fff;
+
+  .container {
+    padding: 10px 0 25px 0;
+
+    @include respond(tablet) {
+      padding: 30px 0 75px 0;
+    }
+  }
+
+  &__list {
+    @include ul-clear;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0 0 25px 0;
+
+    @include respond(tablet) {
+      padding: 20px 0 85px 0;
+    }
+
+    @include respond(desktop) {
+      justify-content: space-between;
+    }
+  }
+
+  &__item {
+    flex-shrink: 1;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 20px;
+    border: 5px solid $color-main;
+    border-radius: $brd-rad;
+
+    @include respond(tablet-small) {
+      width: 40%;
+    }
+
+    @include respond(desktop) {
+      width: 314px;
+      width: 29%;
+    }
+
+    &:hover {
+      box-shadow: 2px 2px 14px rgba(0, 0, 0, 0.4);
+    }
+
+    &--best {
+      position: relative;
+      margin-top: 40px;
+
+      @include respond(tablet-small) {
+        margin-top: 20px;
+      }
+
+      &::before {
+        content: "bestseller";
+        position: absolute;
+        width: 70%;
+        top: -28px;
+        left: 0;
+        right: 0;
+        margin: auto;
+        padding: 10px 0;
+        color: red;
+        font-size: 17px;
+        font-weight: 700;
+        text-transform: uppercase;
+        text-align: center;
+        letter-spacing: 2px;
+        z-index: 2;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        width: 80%;
+        height: 50px;
+        top: -25px;
+        left: 0;
+        right: 0;
+        margin: auto;
+        background: transparent url("../img/best-shape.svg") center center no-repeat;
+        background-size: 100% auto;
+      }
+    }
+  }
+
+  &__link {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-shrink: 1;
+    height: 100%;
+    width: 100%;
+    text-decoration: none;
+    color: #000;
+  }
+
+  &__header {
+    margin-bottom: 20px;
+    padding: 10px;
+    position: relative;
+    z-index: 2;
+    font-size: 20px;
+    font-weight: 400;
+    text-align: center;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    background-color: $color-main;
+
+    @include respond(tablet) {
+      font-size: 29px;
+
+      span {
+        font-size: 36px;
+      }
+    }
+
+    @include respond(desktop) {
+      padding: 34px 20px;
+    }
+
+    span {
+      font-size: 26px;
+    }
+  }
+
+  &__price {
+    margin-right: 20px;
+    margin-left: auto;
+    text-align: center;
+    font-size: 40px;
+    font-weight: 300;
+
+    @include respond(tablet) {
+      margin-right: auto;
+      margin-top: auto;
+      font-size: 60px;
+    }
+
+  }
+
+  &__footer {
+    margin-bottom: 0;
+    padding: 10px;
+    font-size: 20px;
+    font-weight: 200;
+    text-align: center;
+    letter-spacing: 1px;
+    background-color: $color-main;
+
+    @include respond(tablet) {
+      font-size: 22px;
+      letter-spacing: 2px;
+    }
+  }
+}

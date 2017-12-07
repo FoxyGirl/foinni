@@ -1,0 +1,45 @@
+.title-section {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-weight: 200;
+  font-size: $fsz-xsmall-title;
+  text-align: center;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+
+  &::first-letter {
+    font-size: 34px;
+  }
+
+  @include respond(mobile) {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 24px;
+
+    &::first-letter {
+      font-size: 34px;
+    }
+  }
+
+  @include respond(tablet) {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 30px;
+
+    &::first-letter {
+      font-size: 40px;
+    }
+  }
+
+  @include respond(desktop) {
+    font-size: 50px;
+
+    &::first-letter {
+      font-size: 60px;
+    }
+  }
+
+  &--left {
+    text-align: left;
+  }
+}

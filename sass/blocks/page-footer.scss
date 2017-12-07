@@ -1,0 +1,72 @@
+.page-footer {
+  background: $color-main;
+
+  .container {
+    padding-top: 40px;
+    padding-bottom: 20px;
+    text-align: left;
+
+    @include respond(tablet) {
+      padding-top: 70px;
+      padding-bottom: 55px;
+    }
+  }
+  
+  &__navigation {
+    width: 100%;
+    margin-bottom: 20px;
+
+    @media (min-width: 470px) {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      width: 100%;
+      flex-wrap: nowrap;
+    }
+
+    @include respond(tablet) {
+      width: 65%;
+    }
+
+    .submenu {
+      padding-top: 10px;
+      margin-bottom: 20px;
+      border-top: 1px solid #000;
+
+      @media (min-width: 470px) {
+        flex-basis: 155px;
+        margin-right: 85px;
+        padding-top: 30px;
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+
+  &__main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  &__additions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+    @include respond(tablet) {
+      display: block;
+      width: auto;
+    }
+  }
+
+  &__copyright {
+    margin-top: 35px;
+    font-size: 14px;
+    text-align: center;
+  }
+}

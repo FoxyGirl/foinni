@@ -1,0 +1,39 @@
+.testimonials {
+  background-color: $color-bg;
+
+  @include respond(tablet-small) {
+    background: $color-bg url("../img/bg-testimonials-short.png") 90% 0 no-repeat;
+    background-size: 30% 100%;
+  }
+
+  @include respond(tablet) {
+    background: $color-bg url("../img/bg-testimonials-short.png") 95% 0 no-repeat;
+    background-size: 40% 100%;
+  }
+
+  .container {
+    padding-top: 10px;
+    padding-bottom: 15px;
+
+    @include respond(tablet-small) {
+      padding-top: 30px;
+      padding-bottom: 40px;
+    }
+  }
+
+  &__inner {
+    @include respond(tablet-small) {
+      width: 60%;
+    }
+
+    @include respond(tablet) {
+      width: 50%;
+    }
+  }
+  
+  &__text {
+    text-align: left;
+    font-size: 18px;
+    font-weight: 300;
+  }
+}
