@@ -1,11 +1,11 @@
 html,
 body {
   min-width: 320px;
-  font-family: $font-family-base;
+  font-family: Roboto, Tahoma, Arial, sans-serif;
   font-size: $fsz-base;
   font-weight: normal;
-  color: #000;
-  background-color: #ffffff;
+  color: #8f8e91;
+  background-color: #fffcf4;
   box-sizing: border-box;
 }
 
@@ -21,44 +21,6 @@ body {
 img {
   max-width: 100%;
   height: auto;
-}
-
-h1 {
-  margin-top: 15px;
-  margin-bottom: 8px;
-  font-weight: 200;
-  font-size: 24px;
-  letter-spacing: 3px;
-  text-align: center;
-  text-transform: uppercase;
-
-  &::first-letter {
-    font-size: 37px;
-  }
-
-  @include respond(tablet) {
-      font-size: 32px;
-
-      &::first-letter {
-        font-size: 47px;
-      }
-  }
-
-  @include respond(desktop) {
-      font-size: 40px;
-
-      &::first-letter {
-        font-size: 55px;
-      }
-  }
-
-  @include respond(desktop-all) {
-      font-size: 49px;
-
-      &::first-letter {
-        font-size: 65px;
-      }
-  }
 }
 
 .visually-hidden:not(:focus):not(:active) {

@@ -3,11 +3,11 @@ $bp-small: 400px; // Mobiles and portrait-view tablets
 $bp-sm-middle: 600px; // Mobiles and portrait-view tablets
 $bp-middle: 768px; // Normal mobile devices and small tablets;
 $bp-large: 992px; // Desktop starts here
-$bp-xlarge: 1080px + 2 * $indent; // Desktop seamless transition
+$bp-xlarge: 1170px + 2 * $indent; // Desktop seamless transition
 
 
 /*==========  Desktop First  ==========*/
-/*
+
 @mixin respond($media) {
 
   // for Large Devices, Wide Screens
@@ -35,10 +35,10 @@ $bp-xlarge: 1080px + 2 * $indent; // Desktop seamless transition
     @media only screen and (max-width: $bp-small) { @content; }
   }
 }
-*/
+
 
 /*==========  Mobile First  ==========*/
-
+/*
 @mixin respond($media) {
 
   // for Extra Small Devices, Phones
@@ -71,3 +71,4 @@ $bp-xlarge: 1080px + 2 * $indent; // Desktop seamless transition
     @media (min-width: $bp-xlarge) { @content; }
   }
 }
+*/
