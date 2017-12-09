@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="29.75" height="26.88" viewBox="0 0 29.75 26.875">
+    <defs>
+        <style>
+            .cls-1{fill:#1dde85;fill-rule:evenodd}
+        </style>
+    </defs>
+    <path id="IMAC" class="cls-1" d="M28.44 22.64h-9.12v2.4l1.92 1.92v.48H8.76v-.48l1.92-1.92v-2.4H1.56A1.44 1.44 0 0 1 .12 21.2V2A1.44 1.44 0 0 1 1.56.56h26.88A1.44 1.44 0 0 1 29.88 2v19.2a1.44 1.44 0 0 1-1.44 1.44zm-.48-20.16H2.04V18.8h25.92V2.48z" transform="translate(-.125 -.563)"/>
+</svg>

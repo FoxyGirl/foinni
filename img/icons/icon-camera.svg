@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="26" viewBox="0 0 32 26">
+    <defs>
+        <style>
+            .cls-1{fill:#454546;fill-rule:evenodd}
+        </style>
+    </defs>
+    <path id="CAMERA" class="cls-1" d="M30.5 26h-29A1.5 1.5 0 0 1 0 24.5v-20A1.5 1.5 0 0 1 1.5 3h6.406l2.4-2.4A1.493 1.493 0 0 1 11.5 0h9a1.493 1.493 0 0 1 1.073.455L24.121 3H30.5A1.5 1.5 0 0 1 32 4.5v20a1.5 1.5 0 0 1-1.5 1.5zM16 5a9 9 0 1 0 9 9 9 9 0 0 0-9-9zm0 15a6 6 0 1 1 6-6 6 6 0 0 1-6 6z"/>
+</svg>
