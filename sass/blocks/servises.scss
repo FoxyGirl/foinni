@@ -38,6 +38,10 @@
       &:nth-child(2n) {
         margin-right: 0;
       }
+
+      &:nth-child(3n) {
+        margin-right: 0;
+      }
     }
 
   }
@@ -63,7 +67,9 @@
         color: $color-secondary;
       }
 
-      .servises__icon {
+      svg {
+        fill: $color-main;
+
         .cls-1 {
           fill: $color-main;
         }
@@ -78,6 +84,10 @@
     @include respond(mobile) {
       margin-top: 15px;
       margin-bottom: 5px;
+    }
+
+    svg {
+        fill: $color-secondary;
     }
   }
 
