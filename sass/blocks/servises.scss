@@ -1,5 +1,4 @@
 .servises {
-  &__list {
     @include ul-clear;
     display: flex;
     flex-wrap: wrap;
@@ -8,7 +7,6 @@
       padding-right: $indent;
       padding-left: $indent;
     }
-  }
 
   &__item {
     width: 30%;

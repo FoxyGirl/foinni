@@ -1,0 +1,46 @@
+.social-links {
+  @include ul-clear;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 9px;
+
+  &--teams {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.7);
+    border-top: 1px solid rgba(255, 255, 255, 0.7);
+
+    .social-links__item {
+      width: 24px;
+      margin: 0 8px;
+    }
+  }
+
+  &__item {
+    display: inline-block;
+    vertical-align: top;
+    width: 24px;
+    margin: 0 10px;
+    font-size: 0;
+  }
+
+  &__link {
+    display: block;
+
+    &--white {
+      fill: #fff;
+
+      &:hover,
+      &:active {
+        fill: $color-secondary;
+      }
+    }
+
+    &:hover,
+    &:active {
+    }
+
+    &:active {
+      opacity: 0.7;
+    }
+  }
+}

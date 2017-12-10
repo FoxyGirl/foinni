@@ -3,16 +3,22 @@
 
   &__inner {
     @include container;
-    padding-top: 120px;
+    padding-top: 90px;
+    padding-bottom: 0;
   }
 
   &__header {
+    margin-top: 25px;
     margin-bottom: 60px;
     padding-left: $indent;
     padding-right: $indent;
     color: $color-secondary;
     font-size: 30px;
     font-weight: 500;
+
+    &--team {
+      margin-top: 0;
+    }
 
     span {
       color: $color-main;
