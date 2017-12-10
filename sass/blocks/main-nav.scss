@@ -1,5 +1,6 @@
 .main-nav {
   position: relative;
+  margin-right: 95px;
 
   &__toggler {
     position: absolute;
@@ -111,16 +112,9 @@
   &__list {
     @include ul-clear;
     overflow: hidden;
-
-    @include respond(tablet-small) {
-      position: absolute;
-      left: 0;
-      z-index: 2;
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-    }
-
+    display: flex;
+    justify-content: space-between;
+    
     &--hidden.main-nav__list {
       display: none;
     }
@@ -128,41 +122,56 @@
   }
 
   &__item {
-    background-color: rgba($color-main, 0.4);
-    border-bottom: 2px solid $color-secondary;
+    position: relative;
     flex-grow: 1;
+    font-family: $ffam-base;
+    font-size: 14px;
+    margin: 20px;
 
-    @include respond(tablet-small) {
-      border-bottom: 2px solid transparent;
-      border-right: 2px solid $color-secondary;
-    }
-
-    &:hover {
-      background-color: $color-main;
-    }
-
-    &:active {
-      background-color: rgba($color-main, $act-opacity);
+    &:last-child {
+      margin-right: 0;
     }
 
     a {
       display: block;
-      padding: 10px 20px;
+      padding: 10px 0;
       text-decoration: none;
       text-transform: uppercase;
-      color: #000;
+      color: #fff;
 
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        right: 50%;
+        height: 1px;
+        background-color: #fff;
+      }
+
+      &:hover {
+        &::after {
+          left: 0%;
+          right: 0%;
+          transition: all 0.3s;
+        }
+      }
+
+      &:active {
+        opacity: 0.6;
+      }
     }
 
     &--active {
-      background-color: $color-secondary;
 
-      &:hover {
-        background-color: $color-secondary;
-      }
-      
       a {
-        color: #fff;
+        color: $color-main;
+
+        &::after {
+          left: 0;
+          right: 0;
+          background-color: $color-main;
+        }
       }
     }
   }

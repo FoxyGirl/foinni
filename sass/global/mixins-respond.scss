@@ -1,9 +1,10 @@
-$bp-xsmall: 320px; // Tiny-screen and old devices;
-$bp-small: 400px; // Mobiles and portrait-view tablets
-$bp-sm-middle: 600px; // Mobiles and portrait-view tablets
-$bp-middle: 768px; // Normal mobile devices and small tablets;
-$bp-large: 992px; // Desktop starts here
-$bp-xlarge: 1170px + 2 * $indent; // Desktop seamless transition
+$bp-xsmall: 320px;                // Tiny-screen and old devices;
+$bp-small: 400px;                 // Mobiles and portrait-view tablets
+$bp-sm-middle: 600px;             // Mobiles and portrait-view tablets
+$bp-middle: 768px;                // Normal mobile devices and small tablets;
+$bp-large: 992px;                 // Desktop starts here
+//$bp-xlarge: 1170px + 2 * $indent; // Desktop seamless transition
+$bp-xlarge: 1170px;               // Desktop seamless transition
 
 
 /*==========  Desktop First  ==========*/
@@ -72,3 +73,29 @@ $bp-xlarge: 1170px + 2 * $indent; // Desktop seamless transition
   }
 }
 */
+
+
+@mixin container() {
+  position: relative;
+  margin: 0 auto;
+  max-width: $bp-xlarge;
+  padding: 0;
+  @include clearfix;
+}
+
+@mixin container-i() {
+  position: relative;
+  margin: 0 auto;
+  padding-right: $indent;
+  padding-left: $indent;;
+  @include clearfix;
+
+  @include respond(tablet-large) {
+    padding: 0 2*$indent;
+  }
+
+  @include respond(desktop) {
+    max-width: $bp-xlarge;
+    padding: 0;
+  }
+}

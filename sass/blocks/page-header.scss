@@ -1,94 +1,94 @@
 .page-header {
   position: relative;
-  background-color: #fff;
   position: relative;
   @include clearfix;
-/*
-  background-color: cyan;
+  background: #050403 url('../img/bg-header.jpg') 0 0 no-repeat;
+  background-size: cover;
   
-  @include respond(mobile) {
-      background-color: green;
+  &::before {
+    content: '';
+    position: absolute;
+    top: 120px;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background-color: rgba(#fff, 0.17);
   }
 
-  @include respond(tablet) {
-    background-color: yellow;
+  &__inner {
+    @include container;
   }
 
-  @include respond(desktop) {
-    background-color: red;
-  }
-
-  @include respond(desktop-all) {
-    background-color: purple;
-  }
-*/
-  .container {
-    padding-left: 0;
-    padding-right: 0;
-    //
-    //@include respond(tablet-small) {
-    //  padding-left: 20px;
-    //  padding-right: 20px;
-    //}
-    //
-    //@include respond(desktop-all) {
-    //  padding-left: 0;
-    //  padding-right: 0;
-    //}
-  }
-
-  &__wrapper-flex {
-    height: 120px;
+  &__top {
     display: flex;
+    height: 120px;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap;
+  }
 
-    @include respond(tablet-small) {
-      height: 80px;
-      flex-wrap: nowrap;
+  &__main {
+    display: flex;
+    flex-direction: column;
+    height: 680px;
+  }
+
+  &__text {
+    margin: auto;
+    text-align: center;
+  }
+
+  &__slogan {
+    font-family: Exo, "Arial Black", sans-serif;
+    font-weight: 400;
+    font-size: 48px;
+    text-align: center;
+    color: #fff;
+
+    @include respond(mobile) {
+      padding-right: 20px;
+      padding-left: 20px;
     }
+
+    span {
+      font-weight: 700;
+      text-transform: uppercase;
+      color: $color-main;
+    }
+  }
+
+  p {
+    width: 78%;
+    margin: 0 auto;
+    font-family: $ffam-base;
+    font-weight: 300;
   }
 
   &__logo {
-    //float: left;
-    margin-left: 20px;
+    display: block;
+    margin-left: 30px;
     font-size: 0;
 
-    @include respond(tablet-small) {
-      margin-left: 80px;
+    @include respond(mobile) {
+      margin-left: $indent;
     }
-  }
-
-  &__logo-link {
-    display: block;
 
     svg {
-      width: 210px;
+      width: 137px;
       height: auto;
+      transition: transform 0.3s;
 
-      @include respond(mobile) {
-        width: 270px;
-        height: auto;
-      }
-
-      @include respond(tablet-small) {
-        width: 162px;
-        height: 19px;
-      }
     }
 
     &:hover {
       svg {
-        path {
-          fill: $color-secondary;
-        }
+        transform: rotate3d(0,1,0, 360deg);
+        transition: transform 0.3s;
       }
+    }
+
+    &:active {
+      opacity: 0.6;
     }
   }
 
-  .btn--phone {
-    margin-left: auto;
-    margin-bottom: 0;
-  }
 }
