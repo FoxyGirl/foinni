@@ -3,34 +3,28 @@
   vertical-align: top;
   box-sizing: border-box;
   margin: 0 10px 20px;
-  padding: 16px 10px;
-  font-size: $fsz-btn-small;
-  font-weight: 200;
+  padding: 10px 20px;
+  font-family: $ffam-base;
+  font-size: $fsz-base;
+  font-weight: 100;
   letter-spacing: 1px;
   text-decoration: none;
   text-transform: uppercase;
   color: #ffffff;
-  background-color: $color-secondary;
+  background-color: $color-main;
   border: none;
-  border-radius: $brd-rad;
   outline: none;
 
-  @include respond(mobile-small) {
-    padding: 16px 20px;
-  }
-
-  @include respond(tablet) {
-    font-size: $fsz-btn;
-    padding: 16px 30px;
-    letter-spacing: 2px;
+  @include respond(mobile) {
+    padding: 10px 15px;
   }
 
   &:hover {
-    background-color: $color-btn-hover;
+    background-color: $color-secondary;
   }
 
   &:active {
-    background-color: $color-btn-active;
+    background-color: rgba($color-secondary, $opacity-btn);
   }
 
   &--transparent {
@@ -40,47 +34,18 @@
 
     &:hover {
       color: #fff;
-      background-color: $color-secondary;
+      background-color: $color-main;
       border-color: transparent;
     }
 
     &:active {
       color: #fff;
-      background-color: rgba($color-btn-active, $opacity-btn);
+      background-color: rgba($color-main, $opacity-btn);
       border-color: transparent;
     }
 
   }
 
-  &.btn--phone {
-    background-color: $color-main;
-    color: #000;
-    border-radius: 8px;
-    padding: 5px 18px 10px;
-    order: 1;
-    width: 60%;
-    
-    &:hover {
-      background-color: $color-secondary;
-      color: #fff;
 
-      span {
-        border-color: #fff;
-      }
-    }
-
-    &:active {
-      background-color: rgba($color-secondary, $act-opacity);
-    }
-
-    span {
-      border-bottom: 1px dashed #000;
-    }
-
-    @include respond(tablet-small) {
-      order: 0;
-      width: auto;
-    }
-  }
 
 }

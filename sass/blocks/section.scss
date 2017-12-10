@@ -1,0 +1,39 @@
+.section {
+  text-align: center;
+
+  &__inner {
+    @include container;
+    padding-top: 120px;
+  }
+
+  &__header {
+    margin-bottom: 60px;
+    padding-left: $indent;
+    padding-right: $indent;
+    color: $color-secondary;
+    font-size: 30px;
+    font-weight: 500;
+
+    span {
+      color: $color-main;
+      text-transform: uppercase;
+    }
+
+    @include respond(tablet-small) {
+      width: 100%;
+      padding-left: $indent;
+      padding-right: $indent;
+    }
+  }
+
+  &__text {
+    width: 75%;
+    padding-left: $indent;
+    padding-right: $indent;
+    margin: 0 auto 60px;
+
+    @include respond(tablet-small) {
+      width: 100%;
+    }
+  }
+}
