@@ -27,6 +27,11 @@ $bp-xlarge: 1170px;               // Desktop seamless transition
   }
 
   // for Small Devices
+  @if $media == tablet-small {
+    @media only screen and (max-width: $bp-sm-middle) { @content; }
+  }
+
+  // for Small Devices
   @if $media == mobile {
     @media only screen and (max-width: $bp-middle) { @content; }
   }

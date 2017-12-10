@@ -2,7 +2,7 @@
   position: relative;
   position: relative;
   @include clearfix;
-  background: #050403 url('../img/bg-header.jpg') 0 0 no-repeat;
+  background: #050403 url('../img/bg-header.jpg') center center no-repeat;
   background-size: cover;
   
   &::before {
@@ -13,23 +13,37 @@
     right: 0;
     height: 1px;
     background-color: rgba(#fff, 0.17);
+
+    @include respond(tablet-small) {
+      top: 60px;
+    }
   }
 
   &__inner {
     @include container;
+    overflow: hidden;
   }
 
   &__top {
+    position: relative;
     display: flex;
     height: 120px;
     justify-content: space-between;
     align-items: center;
+
+    @include respond(tablet-small) {
+      height: 60px;
+    }
   }
 
   &__main {
     display: flex;
     flex-direction: column;
     height: 680px;
+
+    @include respond(mobile) {
+      height: calc(100vh - 60px);
+    }
   }
 
   &__text {
@@ -77,6 +91,9 @@
       height: auto;
       transition: transform 0.3s;
 
+      @include respond(tablet-small) {
+        width: 100px;
+      }
     }
 
     &:hover {
