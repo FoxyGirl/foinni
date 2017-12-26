@@ -5,6 +5,10 @@
     @include container;
     padding-top: 90px;
     padding-bottom: 0;
+
+    &--works {
+      max-width: 1173px;
+    }
   }
 
   &__header {
