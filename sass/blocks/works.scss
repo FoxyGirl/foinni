@@ -16,8 +16,10 @@
       color: $color-secondary;
 
       &:hover,
-      &:active {
+      &:active,
+      &:focus {
         border-bottom: 1px solid $color-secondary;
+        outline: none;
       }
 
       &:active {
@@ -55,7 +57,6 @@
     &:hover {
       .works__link {
         transform: scale(1.2);
-
       }
     }
 
@@ -70,6 +71,10 @@
     font-size: 0;
     background-color: cyan;
     transition: transform 0.3s ease-in-out;
+
+    &:focus {
+      transform: scale(1.2);
+    }
 
     img {
       width: 100%;

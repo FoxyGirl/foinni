@@ -41,7 +41,7 @@
             //e.stopPropagation();    // Prevent bubbling to window
             var target = event.target;
             while (target !== worksFilterList) {
-                console.log('target.tagName ' + target.tagName);
+                
                 if (target.tagName === 'A') {
                     var activeFilter = target.textContent.toLowerCase();
                     var worksFilters = worksFilterList.querySelectorAll('.works__filter');

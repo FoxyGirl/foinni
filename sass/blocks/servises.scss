@@ -53,9 +53,11 @@
     text-align: center;
     border: 1px solid $color-gray;
 
-    &:hover {
+    &:hover,
+    &:focus {
       border: 1px solid $color-main;
       box-shadow: 0 0 0 1px $color-main;
+      outline: none;
 
       .servises__title {
         color: $color-main;

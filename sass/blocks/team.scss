@@ -33,7 +33,8 @@
       margin-right: 0;
     }
 
-    &:hover {
+    &:hover,
+    &:focus {
       height: 390px;
 
       .team__photo {

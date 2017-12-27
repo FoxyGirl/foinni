@@ -37,7 +37,6 @@
       width: 100%;
       margin-top: -1px;
       height: 2px;
-      //transform: translateY(-50%);
       background: #fff;
       transition: background-color .3s;
 
@@ -64,7 +63,8 @@
     }
 
 
-    &:hover {
+    &:hover,
+    &:focus {
       span {
         &::before {
           top: 8px;
@@ -79,7 +79,6 @@
     &--close.main-nav__toggler {
       span {
         background-color: transparent;
-        //background: 0 0;
         transition: background-color .3s, transform .3s .5s;
 
         &::before,
@@ -97,7 +96,8 @@
         }
       }
 
-      &:hover {
+      &:hover,
+      &:focus {
         span {
           transform: rotate3d(0,0,1,-90deg);
           transition: transform .3s .5s;
@@ -170,7 +170,8 @@
         background-color: #fff;
       }
 
-      &:hover {
+      &:hover,
+      &:focus {
         &::after {
           left: 0%;
           right: 0%;
@@ -188,7 +189,8 @@
         border-bottom: 1px solid #fff;
         font-weight: 400;
 
-        &:hover {
+        &:hover,
+        &:focus {
           font-weight: 600;
           background-color: $color-secondary;
         }

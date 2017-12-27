@@ -96,7 +96,8 @@
       }
     }
 
-    &:hover {
+    &:hover,
+    &:focus {
       svg {
         transform: rotate3d(0,1,0, 360deg);
         transition: transform 0.3s;
