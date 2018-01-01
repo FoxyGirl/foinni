@@ -1,4 +1,4 @@
-.works {
+.portfolio {
   &__filters {
     @include ul-clear;
     margin-bottom: 50px;
@@ -55,7 +55,7 @@
     }
 
     &:hover {
-      .works__link {
+      .portfolio__link {
         transform: scale(1.2);
       }
     }
