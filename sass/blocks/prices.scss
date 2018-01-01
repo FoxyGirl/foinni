@@ -1,0 +1,80 @@
+.prices {
+  color: $color-secondary;
+
+  &__list {
+    @include ul-clear;
+    display: flex;
+    justify-content: space-between;
+
+    @include respond(tablet-small) {
+      flex-wrap: wrap;
+    }
+  }
+
+  &__item {
+    width: 25%;
+    flex-shrink: 1;
+    margin: 0 10px 40px;
+
+    @include respond(mobile) {
+      width: 45%;
+    }
+
+    &--active {
+
+      .prices__title {
+        color: $color-main;
+      }
+
+      .prices__block {
+        border: 1px solid $color-main;
+      }
+
+      .prices__amount {
+        color: #fff;
+        background-color: $color-main;
+        border-color: $color-main;
+      }
+      
+      .btn {
+        color: #fff;
+        background-color: $color-main;
+        border-color: $color-main;
+      }
+
+    }
+  }
+
+  &__title {
+    margin: 0 0 30px 0;
+    font-weight: 300;
+    font-size: 14px;
+  }
+  
+  &__amount {
+    font-family: 'Roboto Slab', serif;
+    border: 1px solid $color-gray;
+    padding: 15px;
+    margin-bottom: 20px;
+  }
+
+  &__currency {
+    position: relative;
+    top: -15px;
+    right: -3px;
+    font-weight: 400;
+    font-size: 24px;
+  }
+
+  &__number {
+    font-weight: 400;
+    font-size: 36px;
+  }
+
+  &__period {
+    position: relative;
+    bottom: -5px;
+    left: -5px;
+    font-size: 14px;
+  }
+}

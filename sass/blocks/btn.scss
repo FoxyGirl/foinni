@@ -5,10 +5,11 @@
   margin: 0 10px 20px;
   padding: 10px 60px;
   font-family: $ffam-base;
-  font-size: $fsz-base;
+  font-size: 14px;
   font-weight: 100;
   letter-spacing: 1px;
   text-decoration: none;
+  text-transform: capitalize;
   color: #ffffff;
   background-color: $color-main;
   border: none;
@@ -28,11 +29,13 @@
   }
 
   &--transparent {
+    padding: 10px 14px;
     color: #000;
     background-color: transparent;
     border: 1px solid #000;
 
-    &:hover {
+    &:hover,
+    &:focus {
       color: #fff;
       background-color: $color-main;
       border-color: transparent;
