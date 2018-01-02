@@ -5,9 +5,9 @@
   margin: 0 10px 20px;
   padding: 10px 60px;
   font-family: $ffam-base;
-  font-size: 14px;
+  font-size: $fsz-base;
   font-weight: 100;
-  letter-spacing: 1px;
+  //letter-spacing: 1px;
   text-decoration: none;
   text-transform: capitalize;
   color: #ffffff;
@@ -46,9 +46,25 @@
       background-color: rgba($color-main, $opacity-btn);
       border-color: transparent;
     }
-
   }
 
+  &--contact {
+    min-width: 195px;
+    padding: 15px 20px;
+    margin-bottom: 0;
 
+    &:hover,
+    &:focus {
+      color: $color-main;
+      background-color: #fff;
+      font-weight: 400;
+    }
+
+    &:active {
+      //color: #fff;
+      background-color: rgba(#fff, $opacity-btn);
+      border-color: transparent;
+    }
+  }
 
 }

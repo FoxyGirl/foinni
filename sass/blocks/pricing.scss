@@ -20,6 +20,10 @@
       width: 45%;
     }
 
+    .btn {
+      font-size: 14px;
+    }
+
     &--active {
 
       .prices__title {
@@ -40,6 +44,12 @@
         color: #fff;
         background-color: $color-main;
         border-color: $color-main;
+
+        &:hover,
+        &:focus {
+          background-color: $color-secondary;
+          border-color: $color-secondary;
+        }
       }
 
     }

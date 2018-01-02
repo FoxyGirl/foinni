@@ -4,35 +4,35 @@
 ;(function() {
     'use strict';
 
-    var btnMore = document.getElementById('btn-works-more');
-    var worksItemTemplate = document.querySelector('.works__item');
-    var worksFilterList = document.getElementById('works-filters');
-    var worksList = document.querySelector('.works__list');
+    var btnMore = document.getElementById('btn-portfolio-more');
+    var portfolioItemTemplate = document.querySelector('.portfolio__item');
+    var portfolioFilterList = document.getElementById('portfolio-filters');
+    var portfolioList = document.querySelector('.portfolio__list');
 
     btnMore.addEventListener('click', addMoreWorks);
     btnMore.addEventListener('keydown', addMoreWorks);
 
-    worksFilterList.addEventListener('click', updateWorksList);
-    worksFilterList.addEventListener('keydown', updateWorksList);
+    portfolioFilterList.addEventListener('click', updateWorksList);
+    portfolioFilterList.addEventListener('keydown', updateWorksList);
 
     /**
-     * Add more works items.
+     * Add more portfolio items.
      * @param {Event} - e - The Event.
      */
     function addMoreWorks(e) {
         if (isActivationEvent(e)) {
             e.preventDefault();
 
-            var activeFilter = document.querySelector('.works__filter--active > a').textContent.toLowerCase();
-            var currentAmount = document.querySelectorAll('.works__item').length;
-            var fragment = createNewItems(activeFilter, currentAmount, worksItemTemplate);
+            var activeFilter = document.querySelector('.portfolio__filter--active > a').textContent.toLowerCase();
+            var currentAmount = document.querySelectorAll('.portfolio__item').length;
+            var fragment = createNewItems(activeFilter, currentAmount, portfolioItemTemplate);
 
-            document.querySelector('.works__list').appendChild(fragment);
+            document.querySelector('.portfolio__list').appendChild(fragment);
         }
     }
 
     /**
-     * Update works list according filter in target.
+     * Update portfolio list according filter in target.
      * @param {Event} - e - The Event.
      */
     function updateWorksList(e) {
@@ -40,23 +40,23 @@
             e.preventDefault();     // Prevent window scrolling if SPACE_KEY_CODE
             //e.stopPropagation();    // Prevent bubbling to window
             var target = event.target;
-            while (target !== worksFilterList) {
+            while (target !== portfolioFilterList) {
                 
                 if (target.tagName === 'A') {
                     var activeFilter = target.textContent.toLowerCase();
-                    var worksFilters = worksFilterList.querySelectorAll('.works__filter');
+                    var portfolioFilters = portfolioFilterList.querySelectorAll('.portfolio__filter');
 
-                    [].forEach.call(worksFilters, function(filter) {
+                    [].forEach.call(portfolioFilters, function(filter) {
                         var filterName = filter.querySelector('a').textContent.toLowerCase();
                         if (filterName === activeFilter) {
-                            filter.classList.add('works__filter--active');
+                            filter.classList.add('portfolio__filter--active');
                         } else {
-                            filter.classList.remove('works__filter--active');
+                            filter.classList.remove('portfolio__filter--active');
                         }
                     });
-                    var fragment = createNewItems(activeFilter, 0, worksItemTemplate);
-                    worksList.innerHTML = '';
-                    worksList.appendChild(fragment);
+                    var fragment = createNewItems(activeFilter, 0, portfolioItemTemplate);
+                    portfolioList.innerHTML = '';
+                    portfolioList.appendChild(fragment);
                     return;
                 }
                 target = target.parentNode;
@@ -90,9 +90,9 @@
 
         for (i; i < amountFinish; i++ ) {
             var newItem = template.cloneNode(true);
-            // newItem.querySelector('.works__img').setAttribute('src', 'http://placeimg.com/391/391/' + filter + i);
-            // newItem.querySelector('.works__img').setAttribute('src', 'https://loremflickr.com/green/391/391/' + filter + '?random=' + i);
-            newItem.querySelector('.works__img').setAttribute('src', 'https://loremflickr.com/391/391/' + filter + '?random=' + i);
+            // newItem.querySelector('.portfolio__img').setAttribute('src', 'http://placeimg.com/391/391/' + filter + i);
+            // newItem.querySelector('.portfolio__img').setAttribute('src', 'https://loremflickr.com/green/391/391/' + filter + '?random=' + i);
+            newItem.querySelector('.portfolio__img').setAttribute('src', 'https://loremflickr.com/391/391/' + filter + '?random=' + i);
 
             fragment.appendChild(newItem);
         }
