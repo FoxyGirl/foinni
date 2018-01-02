@@ -5,8 +5,6 @@
     @include ul-clear;
     display: flex;
     justify-content: space-between;
-    //padding-left: 10px;
-    //padding-right: 10px;
 
     @include respond(tablet-small) {
       flex-wrap: wrap;
@@ -20,6 +18,8 @@
 
     @include respond(mobile) {
       width: 45%;
+      margin-left: 2.5%;
+      margin-right: 2.5%;
     }
 
     .btn {
@@ -72,6 +72,10 @@
     border: 1px solid $color-gray;
     padding: 15px;
     margin-bottom: 20px;
+
+    @include respond(mobile) {
+      padding: 8px;
+    }
   }
 
   &__currency {
@@ -80,11 +84,20 @@
     right: -3px;
     font-weight: 400;
     font-size: 24px;
+
+    @include respond(mobile) {
+      font-size: 18px;
+      top: -12px;
+    }
   }
 
   &__number {
     font-weight: 400;
     font-size: 36px;
+
+    @include respond(mobile) {
+      font-size: 28px;
+    }
   }
 
   &__period {
@@ -93,4 +106,6 @@
     left: -5px;
     font-size: 14px;
   }
+
+
 }

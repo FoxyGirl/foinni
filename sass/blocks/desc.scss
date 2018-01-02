@@ -10,6 +10,10 @@
 
     & + & {
       margin-top: 15px;
+
+      @include respond(mobile) {
+        margin-top: 10px;
+      }
     }
   }
 }

@@ -17,6 +17,8 @@
 
   @include respond(mobile) {
     padding: 10px 15px;
+    font-size: 14px;
+    font-weight: 300;
   }
 
   &:hover,

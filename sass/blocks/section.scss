@@ -34,6 +34,7 @@
 
     @include respond(mobile) {
       margin-bottom: 20px;
+      font-size: 26px;
     }
 
     &--team {
@@ -58,6 +59,7 @@
     padding-right: $indent;
     margin: 0 auto 60px;
     line-height: 1.5;
+    font-weight: 100;
 
     @include respond(tablet-small) {
       width: 100%;

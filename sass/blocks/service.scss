@@ -59,11 +59,11 @@
       box-shadow: 0 0 0 1px $color-main;
       outline: none;
 
-      .servises__title {
+      .service__title {
         color: $color-main;
       }
 
-      .servises__desc {
+      .service__desc {
         color: $color-secondary;
       }
 
@@ -74,6 +74,15 @@
           fill: $color-main;
         }
       }
+    }
+
+    @include respond(mobile) {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      padding-left: 10px;
+      padding-right: 10px;
     }
   }
 
@@ -99,7 +108,9 @@
     color: $color-secondary;
 
     @include respond(mobile) {
+      margin-top: 20px;
       margin-bottom: 15px;
+      margin-left: 15px;
       font-size: 20px;
     }
   }
