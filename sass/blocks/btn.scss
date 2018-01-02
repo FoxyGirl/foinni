@@ -61,10 +61,14 @@
     }
 
     &:active {
-      //color: #fff;
       background-color: rgba(#fff, $opacity-btn);
       border-color: transparent;
     }
+  }
+
+  &--page-footer {
+    margin-left: 0;
+    padding: 10px 17px;
   }
 
 }

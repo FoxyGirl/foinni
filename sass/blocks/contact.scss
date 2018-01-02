@@ -67,6 +67,7 @@
     font-weight: 100;
     font-style: italic;
     resize: none;
+    @include placeholder-color(#fff);
 
     &:focus {
       border-color: $color-main;

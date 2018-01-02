@@ -5,6 +5,16 @@
   align-items: center;
   padding: 9px;
 
+  .social-links__item {
+    display: inline-block;
+    vertical-align: top;
+    font-size: 0;
+  }
+
+  .social-links__link {
+    display: block;
+  }
+
   &--teams {
     border-bottom: 1px solid rgba(255, 255, 255, 0.7);
     border-top: 1px solid rgba(255, 255, 255, 0.7);
@@ -12,35 +22,67 @@
     .social-links__item {
       width: 24px;
       margin: 0 8px;
+      width: 24px;
+      margin: 0 10px;
     }
-  }
 
-  &__item {
-    display: inline-block;
-    vertical-align: top;
-    width: 24px;
-    margin: 0 10px;
-    font-size: 0;
-  }
+    .social-links__link {
+      &--white {
+        fill: #fff;
 
-  &__link {
-    display: block;
-
-    &--white {
-      fill: #fff;
+        &:hover,
+        &:active {
+          fill: $color-secondary;
+        }
+      }
 
       &:hover,
       &:active {
-        fill: $color-secondary;
+      }
+
+      &:active {
+        opacity: 0.7;
       }
     }
+  }
 
-    &:hover,
-    &:active {
+  &--footer {
+    display: block;
+    margin-bottom: 20px;
+    padding-left: 0;
+    text-align: left;
+
+    .social-links__item {
+      width: 40px;
+      height: 40px;
+      margin-right: 10px;
     }
 
-    &:active {
-      opacity: 0.7;
+    .social-links__link {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      border: 2px solid $color-secondary;
+
+      &:hover,
+      &:focus {
+        border-color: $color-main;
+
+        svg {
+          fill: $color-main;
+        }
+      }
+
+      svg {
+        position: absolute;
+        @include zero-centered;
+        fill: $color-secondary;
+      }
+
+      &:active {
+        opacity: $opacity-btn;
+      }
     }
   }
+
 }

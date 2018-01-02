@@ -1,0 +1,28 @@
+.submenu {
+  @include ul-clear;
+  max-width: 180px;
+  color: $color-gray;
+  font-size: 14px;
+  line-height: 2;
+  column-count: 2;
+
+  @media (max-width: 850px) {
+    margin-bottom: 30px;
+  }
+
+  &__link {
+    color: $color-gray;
+    text-decoration: none;
+    text-transform: capitalize;
+
+    &:hover,
+    &:focus {
+      color: $color-main;
+      text-decoration: underline;
+    }
+
+    &:active {
+      color: rgba($color-main, $opacity-btn);
+    }
+  }
+}
