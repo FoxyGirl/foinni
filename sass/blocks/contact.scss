@@ -6,6 +6,12 @@
     @include container;
     padding: 35px 0;
     overflow: hidden;
+
+    @include respond(desktop) {
+      padding-right: 20px;
+      padding-left: 20px;
+    }
+
   }
 
   &__title {
@@ -41,6 +47,10 @@
     &:focus {
       border-color: $color-main;
     }
+
+    @include respond(mobile) {
+      width: 100%;
+    }
   }
 
   &__textarea {
@@ -56,6 +66,7 @@
     font-size: 14px;
     font-weight: 100;
     font-style: italic;
+    resize: none;
 
     &:focus {
       border-color: $color-main;
