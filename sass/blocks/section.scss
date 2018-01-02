@@ -6,12 +6,20 @@
     padding-top: 90px;
     padding-bottom: 0;
 
+    @include respond(mobile) {
+      padding-top: 30px;
+    }
+
     &--works {
       max-width: 1173px;
     }
 
     &--pricing {
       padding: 65px 0 125px 0;
+
+      @include respond(mobile) {
+        padding-bottom: 30px;
+      }
     }
   }
 
@@ -23,6 +31,10 @@
     color: $color-secondary;
     font-size: 30px;
     font-weight: 500;
+
+    @include respond(mobile) {
+      margin-bottom: 20px;
+    }
 
     &--team {
       margin-top: 0;
@@ -45,9 +57,11 @@
     padding-left: $indent;
     padding-right: $indent;
     margin: 0 auto 60px;
+    line-height: 1.5;
 
     @include respond(tablet-small) {
       width: 100%;
+      margin-bottom: 20px;
     }
   }
 }

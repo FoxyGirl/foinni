@@ -10,6 +10,10 @@ body {
   background-color: #fffcf4;
   box-sizing: border-box;
   //overflow: hidden;
+
+  @include respond(mobile) {
+    font-size: $fsz-small;
+  }
 }
 
 * {

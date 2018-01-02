@@ -12,14 +12,24 @@
       padding-left: 20px;
     }
 
+    @include respond(mobile) {
+      padding-top: 10px;
+      padding-bottom: 30px;
+    }
+
   }
 
   &__title {
+    margin: 10px 0 25px;
     font-weight: 400;
     font-size: 30px;
     text-align: center;
     text-transform: uppercase;
     color: #fff;
+
+    @include respond(mobile) {
+      margin-bottom: 20px;
+    }
   }
 
   &__form {
