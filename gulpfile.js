@@ -33,26 +33,26 @@ var FAVICON_DATA_FILE = 'faviconData.json';
 // package (see the check-for-favicon-update task below).
 gulp.task('generate-favicon', function(done) {
     realFavicon.generateFavicon({
-        masterPicture: 'img/logo-favicon.svg',
+        masterPicture: 'img/logo-favicons.png',
         dest: 'img/favicons',
-        iconsPath: '/',
+        iconsPath: 'img/favicons',
         design: {
             ios: {
                 pictureAspect: 'backgroundAndMargin',
-                backgroundColor: '#ffffff',
+                backgroundColor: '#000000',
                 margin: '21%'
             },
             desktopBrowser: {},
             windows: {
                 pictureAspect: 'whiteSilhouette',
-                backgroundColor: '#ffd200',
+                backgroundColor: '#ffc40d',
                 onConflict: 'override'
             },
             androidChrome: {
                 pictureAspect: 'shadow',
-                themeColor: '#ffffff',
+                themeColor: '#000000',
                 manifest: {
-                    name: 'PHOTOBOOK',
+                    name: 'FOINNI',
                     display: 'browser',
                     orientation: 'notSet',
                     onConflict: 'override'
@@ -181,7 +181,7 @@ gulp.task('svg-clean', function () {
 gulp.task("copy", function() {
     return gulp.src([
         "fonts/*.*",
-        "img/*.*",
+        "img/**/*.*",
         "js/picturefill.min.js",
         "*.html"
     ], {

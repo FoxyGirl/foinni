@@ -1,537 +1,11 @@
-<!DOCTYPE html>
-<html lang="en" class="no-js">
-    <head>
-        <meta charset="UTF-8">
-        <title>Foinni</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="https://fonts.googleapis.com/css?family=Exo:400,700" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,400,500" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:100,400" rel="stylesheet">
-        <script>
-            document.documentElement.classList.remove('no-js');
-        </script>
-        <link rel="stylesheet" href="css/style.min.css">
-    </head>
-    <body>
-    <svg xmlns="http://www.w3.org/2000/svg" display="none">
-        <symbol id="icon-behance" viewBox="0 0 25 16"><path d="M16.4 1.6h6.2v1.6h-6.2V1.6zM25 11h-8.1c.1 2 1 2.7 2.8 2.7 1.2 0 2.2-.4 2.4-1.1h2.5c-.9 2.7-2.5 3.4-5 3.4-3.5 0-5.7-2.4-5.7-5.9-.2-3.1 2.2-5.8 5.3-6h.4c3.7 0 5.6 3.4 5.4 6.9zm-8.1-2.3h5c-.3-1.6-1-2.2-2.5-2.2-1.3-.1-2.4.8-2.5 2.1v.1zM13 11.2c0 3.2-2.7 4.5-5.5 4.5H0V0h7.3c3 0 4.9 1.1 4.9 4 0 1.4-.8 2.7-2.1 3.3 1.8.4 3 2 2.9 3.9zM6.3 2.6H3.1v3.6h3.4c1 .2 1.9-.5 2.1-1.5v-.4C8.7 3 7.5 2.6 6.3 2.6zm.5 6H3.1v4.3h3.6c1.3 0 2.5-.4 2.5-2.1.1-1.5-.9-2.2-2.4-2.2z"/></symbol>
-        <symbol id="icon-brightness-high" viewBox="0 0 32 32"><path d="M30.5 17.5h-4c-.8 0-1.5-.7-1.5-1.5s.7-1.5 1.5-1.5h4c.8 0 1.5.7 1.5 1.5s-.7 1.5-1.5 1.5zM28.1 6.1l-2.7 2.7-.8.8c-.3.3-.7.4-1.1.4-.8 0-1.5-.7-1.5-1.5 0-.4.2-.8.4-1.1l.8-.8 2.7-2.7c.6-.6 1.5-.6 2.1 0 .7.6.7 1.6.1 2.2zM16 22c-2.2 0-4.2-1.2-5.2-3l-.6-1.5c-.8-3.2 1.1-6.5 4.3-7.3 3.2-.8 6.5 1.1 7.3 4.3.8 3.2-1.1 6.5-4.3 7.3-.5.1-1 .2-1.5.2zm0-9c-1.7 0-3 1.3-3 3s1.3 3 3 3 3-1.3 3-3-1.3-3-3-3zm0-6c-.8 0-1.5-.7-1.5-1.5v-4c0-.8.7-1.5 1.5-1.5s1.5.7 1.5 1.5v4c0 .8-.7 1.5-1.5 1.5zM9.6 24.6l-.8.8-2.7 2.7c-.6.6-1.5.6-2.1 0-.6-.6-.6-1.5 0-2.1l2.7-2.7.8-.8c.6-.6 1.5-.6 2.1 0s.5 1.5 0 2.1zM8.5 10c-.4 0-.8-.2-1.1-.4l-.7-.8-2.8-2.7c-.6-.6-.6-1.5 0-2.1S5.4 3.4 6 4l2.7 2.7.8.8c.3.2.5.6.5 1 0 .8-.7 1.5-1.5 1.5zm-3 4.5c.8 0 1.5.7 1.5 1.5s-.7 1.5-1.5 1.5h-4C.7 17.5 0 16.8 0 16s.7-1.5 1.5-1.5h4zM16 25c.8 0 1.5.7 1.5 1.5v4c0 .8-.7 1.5-1.5 1.5s-1.5-.7-1.5-1.5v-4c0-.8.7-1.5 1.5-1.5zm7.5-3c.4 0 .8.2 1.1.4l.8.8 2.7 2.7c.6.6.6 1.5 0 2.1s-1.5.6-2.1 0l-2.7-2.7-.8-.8c-.6-.6-.6-1.5 0-2.1.2-.2.6-.4 1-.4z"/></symbol>
-        <symbol id="icon-camera" viewBox="0 0 32 26"><path d="M30.5 26h-29C.7 26 0 25.3 0 24.5v-20C0 3.7.7 3 1.5 3h6.4L10.3.6c.3-.4.7-.6 1.2-.6h9c.4 0 .8.2 1.1.5L24.1 3h6.4c.8 0 1.5.7 1.5 1.5v20c0 .8-.7 1.5-1.5 1.5zM16 5c-5 0-9 4-9 9s4 9 9 9 9-4 9-9-4-9-9-9zm0 15c-3.3 0-6-2.7-6-6s2.7-6 6-6 6 2.7 6 6-2.7 6-6 6z"/></symbol>
-        <symbol id="icon-code" viewBox="0 0 38.4 28.8"><path d="M37.9 15.7l-7.2 7.2c-.7.7-1.9.6-2.5-.1-.6-.7-.6-1.7 0-2.4l5.9-5.9-5.9-5.9c-.7-.7-.7-1.8-.1-2.5s1.8-.7 2.5-.1l.1.1 7.1 7.1c.7.6.8 1.8.2 2.5-.1-.1-.1 0-.1 0zM16.1 27.6c-.3.9-1.4 1.4-2.3 1.1s-1.4-1.4-1.1-2.3l9.6-25.2c.3-.9 1.4-1.4 2.3-1.1s1.4 1.4 1.1 2.3l-9.6 25.2zM10.3 8.5l-5.9 5.9 5.9 5.9c.7.7.6 1.9-.1 2.5-.7.6-1.7.6-2.4 0L.6 15.6c-.7-.7-.7-1.8 0-2.5l.1-.1 7.1-7.1c.7-.7 1.8-.8 2.5-.1.7.7.8 1.8.1 2.5-.1.1-.1.2-.1.2z"/></symbol>
-        <symbol id="icon-facebook" viewBox="0 0 8 17"><path d="M8 0v2.7s-2-.2-2.5.6c-.2.8-.3 1.7-.2 2.6H8c-.2 1-.4 1.7-.6 2.6H5.3V17H1.6V8.5H0V5.9h1.6c0-2 .1-3.9 1-4.9C3.7-.1 4.8 0 8 0z"/></symbol>
-        <symbol id="icon-google-plus" viewBox="0 0 22.4 19.3"><path d="M18.9 4.8v3.4h-1.4V4.8H14V3.4h3.5V0h1.4v3.4h3.5v1.4h-3.5zM9.2 1.4c1.2.6 2 1.9 2 3.3-.1 1.2-.7 2.3-1.7 2.9-1 .7-1.1 1-1.1 1.7 0 .5 1 1.4 1.6 1.8 1.3.8 2.1 2.2 2 3.8 0 2.1-2 4.4-5.8 4.4-3.3 0-6.1-1.6-6.1-3.7s2.6-4.2 5.9-4.2h1c-.5-.4-.8-1-.8-1.6 0-.4.1-.8.3-1.1H6C3.5 8.8 1.5 7 1.4 4.6v-.2C1.4 2.1 3.8 0 6.5 0h5.9l-1.3 1.4H9.2zM6.5 11.9c-2.3 0-4.3 1.4-4.3 3 0 1.7 1.6 2.9 3.9 2.9 3.2 0 4.3-1.2 4.3-2.8 0-.2 0-.4-.1-.6-.3-1-1.1-1.4-2.4-2.3-.4-.1-.9-.2-1.4-.2zm2.6-7.2c-.3-2-1.8-3.5-3.3-3.6S3.2 2.5 3.5 4.5s1.7 3.6 3.2 3.6 2.6-1.5 2.4-3.4z"/></symbol>
-        <symbol id="icon-imac" viewBox="0 0 29.8 26.9"><path d="M28.3 22.1h-9.1v2.4l1.9 1.9v.5H8.6v-.5l1.9-1.9v-2.4H1.4c-.8 0-1.4-.6-1.4-1.4V1.4C0 .6.6 0 1.4 0h26.9c.8 0 1.4.6 1.4 1.4v19.2c.1.8-.6 1.5-1.4 1.5zm-.5-20.2H1.9v16.3h25.9V1.9z"/></symbol>
-        <symbol id="icon-linkedin" viewBox="0 0 22.4 21.3"><path d="M17.4 21.3v-7.8c0-1.6-.5-3.2-2.3-3.2s-2.7 1.6-2.7 3.2v7.7h-5V7.1h5V9c1-1.5 2.7-2.4 4.5-2.4 2.1 0 5.4 1 5.4 6.6v8.1h-4.9zM2.8 5C1.3 5.1.1 4 0 2.5.1 1 1.3-.1 2.8 0c1.5-.1 2.7 1 2.8 2.5C5.5 4 4.2 5.1 2.8 5zm2.5 16.3h-5V7.1h5v14.2z"/></symbol>
-        <symbol id="icon-twitter" viewBox="0 0 19.4 15.8"><path d="M13.2 0c1.2-.1 2.3.4 3.2 1.3.7-.1 1.4-.3 2-.7l.5-.3c-.2.7-.7 1.4-1.3 1.9-.1.1-.3.2-.4.3.8-.1 1.5-.3 2.3-.6-.4.6-.8 1.1-1.4 1.6l-.6.5c0 .9 0 1.7-.2 2.6-1 4.5-3.6 7.5-7.8 8.8-1.8.5-3.8.6-5.6.2-.8-.2-1.6-.4-2.3-.8-.4-.2-.8-.4-1.1-.6L0 14c.4.1.9.1 1.3 0 .4 0 .7 0 1.1-.1.8-.2 1.7-.5 2.4-.9.4-.2.8-.4 1.1-.7-.4 0-.8-.1-1.2-.2-1.2-.4-2.1-1.3-2.5-2.6.6.1 1.2.1 1.8-.1-.5 0-1-.1-1.4-.4C1.4 8.3.7 7 .8 5.6l.4.2c.2.1.5.1.8.2.2.1.4.1.5 0-.2-.2-.5-.3-.7-.6C.9 4.4.6 3.1.9 1.8c.1-.4.2-.7.4-1 .2.1.3.2.4.4.4.4.8.8 1.2 1.1 1.4 1.2 3.1 2 4.9 2.4.6.1 1.2.2 1.8.2-.2-.6-.2-1.3 0-1.9.3-1.2 1.1-2.2 2.3-2.7l.9-.3h.4z"/></symbol>
-        <symbol id="icon-view" viewBox="0 0 35.2 20.4"><path d="M35.2 10.3v.1c0 .3-.2.5-.4.7-.4.4-.8.9-1.2 1.3-2.2 2.3-4.7 4.2-7.5 5.7-1.8.9-3.6 1.6-5.6 2-2.1.4-4.3.4-6.4-.1-3.7-.9-7.1-2.7-10-5.2-1.4-1.1-2.7-2.3-3.8-3.7-.5-.5-.5-1.4 0-1.9.4-.4.8-.8 1.3-1.2C3.7 5.7 6.3 3.8 9 2.3c1.8-.9 3.6-1.6 5.6-2 2.1-.4 4.3-.4 6.4.1 3.7.9 7.1 2.7 10 5.2 1.4 1.1 2.7 2.3 3.8 3.7.2.2.3.5.4.7v.3c0-.1 0-.1 0 0zm-17.6-7c-3.6 0-6.6 3-6.6 6.6s3 6.6 6.6 6.6 6.6-3 6.6-6.6-2.9-6.6-6.6-6.6zm0 9.9c-1.8 0-3.3-1.5-3.3-3.3 0-1.8 1.5-3.3 3.3-3.3s3.3 1.5 3.3 3.3c0 1.8-1.5 3.3-3.3 3.3z"/></symbol>
-        <symbol id="icon-wifi" viewBox="0 0 31.6 28.5"><path d="M29.8 8.7c-7.8-7.6-20.2-7.6-28 0L0 6.3c8.9-8.4 22.8-8.4 31.6 0l-1.8 2.4zm-14-1.2c4.2 0 8.3 1.7 11.2 4.8l-1.9 2.4c-4.6-5.1-12.4-5.6-17.6-1-.4.3-.7.7-1 1l-1.9-2.4c2.9-3.1 7-4.8 11.2-4.8zm0 7.5c2.6 0 5 1.2 6.5 3.3l-1.7 2.1c-1.9-2.7-5.7-3.3-8.4-1.3-.5.4-.9.8-1.3 1.3l-1.7-2.1c1.6-2.1 4-3.3 6.6-3.3zm0 7.5c1.7 0 3 1.3 3 3s-1.3 3-3 3-3-1.3-3-3 1.4-3 3-3z"/></symbol>
-    </svg>
-    <header class="page-header">
-        <div class="page-header__inner">
-            <div class="page-header__top">
-                <a href="#" class="page-header__logo" title="Foinni">
-                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="137" height="36" viewBox="0 0 137 36">
-                        <image width="137" height="36" xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIkAAAAkCAMAAACKeOnLAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAYFBMVEUAAAAd3oUd3oUd3oUd3oUd3oUd3oUd3oUd3oUd3oUd3oUd3oUd3oX//PT//PT//PT//PT//PQd3oX//PT//PT//PT//PT//PT//PT//PT//PQd3oX//PQd3oX//PQAAABPEfU8AAAAHXRSTlMARCKIu1V3mTPd7mbMRIiq3SIR7nfMEZkzZruqVe3vVykAAAABYktHRACIBR1IAAAACXBIWXMAAAsSAAALEgHS3X78AAAAB3RJTUUH4QwJFAkD+tAhUwAAA01JREFUWMOtl9uWqjAMhkupIAcHQdTZOvj+jzlA2hwKtR3XzoVL4Kf5SNK0Veojy7S4yo0xuf6TYDZ9KEoDlh8+wjiaabbKvazXy2mqj8mCxZp24pZ/ANK4lxtwW7trkypYblaTNPfs9PVarAv7Py/P+2UMfLmWfqYJvjkqmG2op30S4Hi9Lgkk7GOyOfJ8yGJVRgVL4fggLUCOFuR1jZMUcmAz+Y6iAiSpLXORZfb2DTC68XqPk6xvt40dGNzWWUGOogLIYF0eVAkkAzqBkHy/r9NxsZs6rAMPEN3Cpvtoo704igqYwcOWbqxVcldJVkL67cClG1+jo6iA7LiZv/eF5F8aiYFXIfjwW2EFNikCshxIDp+RNEvoXVm2boJYx1mKgKz1y+RPJEpnA30ONoKSxowKnA2TLJPzi+xk752ghs8jq2LsJ5gk6hl2wtReFt8KsBWXYZL+QXe6AAmtGesnafr4VIELE9XOhqS/sDuv622XhL54HcjrFikC7MW4Asxd4gp9bRwXRzeLNt5l2xUkGv1AwJ/+zIgKUCIyJioWlqBx+dvRX4+Elo2C1R5b9KMCLBMTIum5946tioKE1pZ193OA/2zIqADLpAiRrLPmbB/c1pL52ZI8nZ/nepnL6ZgiwDLJQiQPFhL75GtLggs/ZN4wp4kCrKQhRHIRi+EP1SwnGWQ5qk2cowIsExknRgIbBHzSU644CdYjdKWj1xgSBFgmeYik52UiwDgJ1uOR+2UZjwowf00iidoncfVYqX1HuGMMCjKXP/2WhHaz7JKTOEe5cES1h4tOWFAI1B0SCILr8Op7t060jL1z5JdAiqAMk1ypgyjbXTqfxJ1n3Ad5wSc/UYFXJoLkLnaSV+oujMTtPdystFMD9l4D2w9EBV6ZCJK1g7h64BeMxPjDsEiLs11U4JWJXAHPtBeA/cFD+SST35SMi75mgU8QbA7DggTicBlVb89jfYiEWqZrH/LM/U5Q8XwFSPBkak3ESpBQjvW0a1HBvBo8mzCJRMHFkJFsDkziBDpVWUQgrQ2TqBNuZDvaUjOSYhtZlpd8iAh8Y6qf5aApD6Pr2XPc3LEtrzDm6aW4gDhUhY4INiDeCfU/WDabjgpmic644Y7yF6cN8DIDxcwMAAAAAElFTkSuQmCC"/>
-                    </svg>
-                </a>
-                <nav class="main-nav">
-                    <button class="main-nav__toggler  " type="button" id="navToggler">
-                        <span></span>
-                    </button>
-                    <ul class="main-nav__list" id="mainNav">
-                        <li class="main-nav__item  main-nav__item--active">
-                            <a href="#">HOME</a>
-                        </li>
-                        <li class="main-nav__item">
-                            <a href="#service">SERVICE</a>
-                        </li>
-                        <li class="main-nav__item">
-                            <a href="#team">team</a>
-                        </li>
-                        <li class="main-nav__item">
-                            <a href="#pricing">PRICING</a>
-                        </li>
-                        <li class="main-nav__item">
-                            <a href="#portfolio">PORTFOLIO</a>
-                        </li>
-                        <li class="main-nav__item">
-                            <a href="#contactUs">Contact us</a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-            <div class="page-header__main">
-                <div class="page-header__text">
-                    <h1 class="page-header__slogan">We Love <span>FOINNI</span> Polapain</h1>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis n                    </p>
-                </div>
-            </div>
-        </div>
-    </header>
-    <section class="section" id="service">
-        <div class="section__inner">
-            <h2 class="section__header">Welcome To <span>FOINNI</span></h2>
-            <p class="section__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-            </p>
-            <ul class="service">
-                <li class="service__item">
-                    <a href="" class="service__link">
-                        <span class="service__icon">
-                            <svg width="41" height="30">
-                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-code"></use>
-                             </svg>
-                        </span>
-                        <h3 class="service__title">Development</h3>
-                        <p class="service__desc">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sevdent, sunt explicabo. Nemo enim ipsam voluptatem quia
-                        </p>
-                    </a>
-                </li>
-                <li class="service__item">
-                    <a href="" class="service__link">
-                        <span class="service__icon">
-                            <svg width="41" height="30">
-                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-imac"></use>
-                              </svg>
-                        </span>
-                        <h3 class="service__title">Responsive</h3>
-                        <p class="service__desc">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sevdent, sunt explicabo. Nemo enim ipsam voluptatem quia
-                        </p>
-                    </a>
-                </li>
-                <li class="service__item">
-                    <a href="" class="service__link">
-                        <span class="service__icon">
-                            <svg width="41" height="30">
-                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-wifi"></use>
-                              </svg>
-                        </span>
-                        <h3 class="service__title">Clean Design</h3>
-                        <p class="service__desc">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sevdent, sunt explicabo. Nemo enim ipsam voluptatem quia
-                        </p>
-                    </a>
-                </li>
-                <li class="service__item">
-                    <a href="" class="service__link">
-                        <span class="service__icon">
-                            <svg width="41" height="30">
-                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-view"></use>
-                              </svg>
-                        </span>
-                        <h3 class="service__title">Graphic Design</h3>
-                        <p class="service__desc">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sevdent, sunt explicabo. Nemo enim ipsam voluptatem quia
-                        </p>
-                    </a>
-                </li>
-                <li class="service__item">
-                    <a href="" class="service__link">
-                        <span class="service__icon">
-                            <svg width="41" height="30">
-                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-camera"></use>
-                              </svg>
-                        </span>
-                        <h3 class="service__title">Photography</h3>
-                        <p class="service__desc">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sevdent, sunt explicabo. Nemo enim ipsam voluptatem quia
-                        </p>
-                    </a>
-                </li>
-                <li class="service__item">
-                    <a href="" class="service__link">
-                        <span class="service__icon">
-                            <svg width="41" height="30">
-                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-brightness-high"></use>
-                              </svg>
-                        </span>
-                        <h3 class="service__title">Photo Editing</h3>
-                        <p class="service__desc">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sevdent, sunt explicabo. Nemo enim ipsam voluptatem quia
-                        </p>
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </section>
-
-    <section class="section" id="team">
-        <div class="section__inner">
-            <h2 class="section__header  section__header--team">Meet Us</h2>
-            <ul class="team">
-                <li class="team__item" tabindex="0">
-                    <div class="team__photo">
-                        <img src="img/photo-1.jpg" alt="">
-                    </div>
-                    <a class="team__desc">
-                        <div class="team__name">Abida Foinni</div>
-                        <div class="team__prof">Photographer</div>
-                    </a>
-                    <ul class="social-links  social-links--teams">
-                        <li class="social-links__item">
-                            <a href="" class="social-links__link  social-links__link--white">
-                                <svg width="24" height="17">
-                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-behance"></use>
-                                </svg>
-                            </a>
-                        </li>
-                        <li class="social-links__item">
-                            <a href="" class="social-links__link  social-links__link--white">
-                                <svg width="24" height="17">
-                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-facebook"></use>
-                                </svg>
-                            </a>
-                        </li>
-                        <li class="social-links__item">
-                            <a href="" class="social-links__link  social-links__link--white">
-                                <svg width="24" height="17">
-                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-twitter"></use>
-                                </svg>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="team__item" tabindex="0">
-                    <div class="team__photo">
-                        <img src="img/photo-12.jpg" alt="">
-                    </div>
-                    <a class="team__desc">
-                        <div class="team__name">Liker Shohel</div>
-                        <div class="team__prof">Photographer</div>
-                    </a>
-                    <ul class="social-links  social-links--teams">
-                        <li class="social-links__item">
-                            <a href="" class="social-links__link  social-links__link--white">
-                                <svg width="24" height="17">
-                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-behance"></use>
-                                </svg>
-                            </a>
-                        </li>
-                        <li class="social-links__item">
-                            <a href="" class="social-links__link  social-links__link--white">
-                                <svg width="24" height="17">
-                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-facebook"></use>
-                                </svg>
-                            </a>
-                        </li>
-                        <li class="social-links__item">
-                            <a href="" class="social-links__link  social-links__link--white">
-                                <svg width="24" height="17">
-                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-twitter"></use>
-                                </svg>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="team__item" tabindex="0">
-                    <div class="team__photo">
-                        <img src="img/photo-2.jpg" alt="">
-                    </div>
-                    <a class="team__desc">
-                        <div class="team__name">Mahmud Koli</div>
-                        <div class="team__prof">Graphic Designer</div>
-                    </a>
-                    <ul class="social-links  social-links--teams">
-                        <li class="social-links__item">
-                            <a href="" class="social-links__link  social-links__link--white">
-                                <svg width="24" height="17">
-                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-behance"></use>
-                                </svg>
-                            </a>
-                        </li>
-                        <li class="social-links__item">
-                            <a href="" class="social-links__link  social-links__link--white">
-                                <svg width="24" height="17">
-                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-facebook"></use>
-                                </svg>
-                            </a>
-                        </li>
-                        <li class="social-links__item">
-                            <a href="" class="social-links__link  social-links__link--white">
-                                <svg width="24" height="17">
-                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-twitter"></use>
-                                </svg>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="team__item" tabindex="0">
-                    <div class="team__photo">
-                        <img src="img/photo-3.jpg" alt="">
-                    </div>
-                    <a class="team__desc">
-                        <div class="team__name">Jolil Shaheb</div>
-                        <div class="team__prof">Web Developer</div>
-                    </a>
-                    <ul class="social-links  social-links--teams">
-                        <li class="social-links__item">
-                            <a href="" class="social-links__link  social-links__link--white">
-                                <svg width="24" height="17">
-                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-behance"></use>
-                                </svg>
-                            </a>
-                        </li>
-                        <li class="social-links__item">
-                            <a href="" class="social-links__link  social-links__link--white">
-                                <svg width="24" height="17">
-                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-facebook"></use>
-                                </svg>
-                            </a>
-                        </li>
-                        <li class="social-links__item">
-                            <a href="" class="social-links__link  social-links__link--white">
-                                <svg width="24" height="17">
-                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-twitter"></use>
-                                </svg>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
-    </section>
-
-    <section class="section" id="portfolio">
-        <div class="section__inner  section__inner--portfolio">
-        <h2 class="section__header  section__header--team">Our Latest Works</h2>
-        <div class="portfolio">
-            <ul class="portfolio__filters" id="portfolio-filters">
-                <li class="portfolio__filter">
-                    <a href="">All</a>
-                </li>
-                <li class="portfolio__filter">
-                    <a href="">Design</a>
-                </li>
-                <li class="portfolio__filter  portfolio__filter--active">
-                    <a href="">Manipulation</a>
-                </li>
-                <li class="portfolio__filter">
-                    <a href="">Photography </a>
-                </li>
-                <li class="portfolio__filter">
-                    <a href="">Development</a>
-                </li>
-            </ul>
-            <ul class="portfolio__list">
-                <li class="portfolio__item">
-                    <a href="" class="portfolio__link">
-                        <img src="img/example-1.jpg" alt="" class="portfolio__img">
-                    </a>
-                </li>
-                <li class="portfolio__item">
-                    <a href="" class="portfolio__link">
-                        <img src="img/example-2.jpg" alt="" class="portfolio__img">
-                    </a>
-                </li>
-                <li class="portfolio__item">
-                    <a href="" class="portfolio__link">
-                        <img src="img/example-3.jpg" alt="" class="portfolio__img">
-                    </a>
-                </li>
-                <li class="portfolio__item">
-                    <a href="" class="portfolio__link">
-                        <img src="img/example-4.jpg" alt="" class="portfolio__img">
-                    </a>
-                </li>
-                <li class="portfolio__item">
-                    <a href="" class="portfolio__link">
-                        <img src="img/example-5.jpg" alt="" class="portfolio__img">
-                    </a>
-                </li>
-                <li class="portfolio__item">
-                    <a href="" class="portfolio__link">
-                        <img src="img/example-6.jpg" alt="" class="portfolio__img">
-                    </a>
-                </li>
-            </ul>
-        </div>
-            <button class="btn" id="btn-portfolio-more">See More</button>
-        </div>
-    </section>
-
-    <section class="section" id="pricing">
-        <div class="section__inner  section__inner--pricing">
-            <h2 class="section__header">Our Pricing Plans</h2>
-            <div class="pricing">
-                <ul class="pricing__list">
-                    <li class="pricing__item">
-                        <h3 class="pricing__title">Basic</h3>
-                        <div class="pricing__amount">
-                            <span class="pricing__currency">$</span>
-                            <span class="pricing__number">20</span>
-                            <span class="pricing__period">/m</span>
-                        </div>
-                        <div class="desc">
-                            <ul class="desc__list">
-                                <li class="desc__item">15 projects</li>
-                                <li class="desc__item">30 GB Storage</li>
-                                <li class="desc__item">Unlimited Data Transfer</li>
-                                <li class="desc__item">50 GB Bandwith</li>
-                                <li class="desc__item">24/7 Support</li>
-                            </ul>
-                        </div>
-                        <button class="btn  btn--transparent">Order now</button>
-                    </li>
-                    <li class="pricing__item">
-                        <h3 class="pricing__title">Standart</h3>
-                        <div class="pricing__amount">
-                            <span class="pricing__currency">$</span>
-                            <span class="pricing__number">40</span>
-                            <span class="pricing__period">/m</span>
-                        </div>
-                        <div class="desc">
-                            <ul class="desc__list">
-                                <li class="desc__item">15 projects</li>
-                                <li class="desc__item">30 GB Storage</li>
-                                <li class="desc__item">Unlimited Data Transfer</li>
-                                <li class="desc__item">50 GB Bandwith</li>
-                                <li class="desc__item">24/7 Support</li>
-                            </ul>
-                        </div>
-                        <button class="btn  btn--transparent">Order now</button>
-                    </li>
-                    <li class="pricing__item  pricing__item--active">
-                        <h3 class="pricing__title">Business</h3>
-                        <div class="pricing__block">
-                            <div class="pricing__amount">
-                                <span class="pricing__currency">$</span>
-                                <span class="pricing__number">80</span>
-                                <span class="pricing__period">/m</span>
-                            </div>
-                            <div class="desc">
-                                <ul class="desc__list">
-                                    <li class="desc__item">15 projects</li>
-                                    <li class="desc__item">30 GB Storage</li>
-                                    <li class="desc__item">Unlimited Data Transfer</li>
-                                    <li class="desc__item">50 GB Bandwith</li>
-                                    <li class="desc__item">24/7 Support</li>
-                                </ul>
-                            </div>
-                            <button class="btn  btn--transparent">Order now</button>
-                        </div>
-                    </li>
-                    <li class="pricing__item">
-                        <h3 class="pricing__title">Premium</h3>
-                        <div class="pricing__amount">
-                            <span class="pricing__currency">$</span>
-                            <span class="pricing__number">80</span>
-                            <span class="pricing__period">/m</span>
-                        </div>
-                        <div class="desc">
-                            <ul class="desc__list">
-                                <li class="desc__item">15 projects</li>
-                                <li class="desc__item">30 GB Storage</li>
-                                <li class="desc__item">Unlimited Data Transfer</li>
-                                <li class="desc__item">50 GB Bandwith</li>
-                                <li class="desc__item">24/7 Support</li>
-                            </ul>
-                        </div>
-                        <button class="btn  btn--transparent">Order now</button>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <section class="contact" id="contactUs">
-        <div class="contact__inner">
-            <h3 class="contact__title">Say Hi</h3>
-            <form action="" class="contact__form">
-                <input type="text" class="contact__input" name="contact-name" placeholder="Your name">
-                <input type="email" class="contact__input" name="contact-email" placeholder="Your email">
-                <textarea name="contact-text" class="contact__textarea" placeholder="Your Message... "></textarea>
-                <div class="contact__btn-group">
-                    <button class="btn  btn--contact" type="submit">Send message</button>
-                </div>
-            </form>
-        </div>
-    </section>
-
-    <footer class="page-footer">
-        <div class="page-footer__inner">
-            <div class="page-footer__main">
-                <div class="page-footer__about">
-                    <h3 class="page-footer__title">About us</h3>
-                    <p class="page-footer__text">
-                        Lorem ipsum dolor sit amet, consectetitecto beatae vitae dicta sunt explicabo. magni dolores
-                        eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia
-                        dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempuaerat voluptatem.
-                    </p>
-                </div>
-                <div class="page-footer__nav">
-                    <h3 class="page-footer__title">Quick Links</h3>
-                    <ul class="submenu">
-                        <li class="submenu__item"><a href="" class="submenu__link">home</a></li>
-                        <li class="submenu__item"><a href="" class="submenu__link">Services</a></li>
-                        <li class="submenu__item"><a href="" class="submenu__link">Portfolio</a></li>
-                        <li class="submenu__item"><a href="" class="submenu__link">pricing</a></li>
-                        <li class="submenu__item"><a href="" class="submenu__link">contact Us</a></li>
-                        <li class="submenu__item"><a href="" class="submenu__link">Development</a></li>
-                        <li class="submenu__item"><a href="" class="submenu__link">Photography</a></li>
-                        <li class="submenu__item"><a href="" class="submenu__link">Design</a></li>
-                        <li class="submenu__item"><a href="" class="submenu__link">Manipulation</a></li>
-                    </ul>
-                </div>
-                <div class="page-footer__other">
-                    <div class="page-footer__socials">
-                        <h3 class="page-footer__title">Find Us On</h3>
-                        <ul class="social-links  social-links--footer">
-                            <li class="social-links__item">
-                                <a href="" class="social-links__link" target="_blank" rel="noopener">
-                                    <svg width="26" height="23">
-                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-facebook"></use>
-                                    </svg>
-                                </a>
-                            </li>
-                            <li class="social-links__item">
-                                <a href="" class="social-links__link" target="_blank" rel="noopener">
-                                    <svg width="26" height="23">
-                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-twitter"></use>
-                                    </svg>
-                                </a>
-                            </li>
-                            <li class="social-links__item">
-                                <a href="" class="social-links__link" target="_blank" rel="noopener">
-                                    <svg width="26" height="23">
-                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-google-plus"></use>
-                                    </svg>
-                                </a>
-                            </li>
-                            <li class="social-links__item">
-                                <a href="" class="social-links__link" target="_blank" rel="noopener">
-                                    <svg width="26" height="23">
-                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-linkedin"></use>
-                                    </svg>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="page-footer__subscribe">
-                        <h3 class="page-footer__title">Subscribe Our Newsletter</h3>
-                        <form action="" class="page-footer__form">
-                            <input type="email" class="page-footer__input" placeholder="Your name">
-                            <button class="btn  btn--page-footer" type="submit">subscribe</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="page-footer__copyright">
-            <p>A Design By MD. Zillur Rahman Sama</p>
-        </div>
-    </footer>
-
-    <!-- Arrow to top -->
-    <a class="arrow-to-up" id="toUp" href="#">
-        <svg version="1.1" width="40" height="40" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 100 100">
-            <polyline points="0,100 50,50 100,100" fill="none" stroke="black" stroke-width="10"/>
-        </svg>
-    </a>
-    <!-- end of Arrow to top -->
-
-    <script src="js/scripts.min.js"></script>
-    </body>
-</html>
+<!DOCTYPE html><html lang="en" class="no-js">    <head>        <meta charset="UTF-8">        <title>Foinni</title>        <meta name="viewport" content="width=device-width, initial-scale=1">        <link href="https://fonts.googleapis.com/css?family=Exo:400,700" rel="stylesheet">        <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,400,500" rel="stylesheet">        <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:100,400" rel="stylesheet">        <script>            document.documentElement.classList.remove('no-js');        </script>        <link rel="stylesheet" href="css/style.min.css"><link rel="apple-touch-icon" sizes="57x57" href="img/favicons/apple-touch-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="img/favicons/apple-touch-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="img/favicons/apple-touch-icon-72x72.png">
+<link rel="icon" type="image/png" sizes="32x32" href="img/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="img/favicons/favicon-16x16.png">
+<link rel="manifest" href="img/favicons/manifest.json">
+<link rel="mask-icon" href="img/favicons/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="img/favicons/favicon.ico">
+<meta name="msapplication-TileColor" content="#ffc40d">
+<meta name="msapplication-config" content="img/favicons/browserconfig.xml">
+<meta name="theme-color" content="#000000"></head>    <body>    <svg xmlns="http://www.w3.org/2000/svg" display="none">        <symbol id="icon-behance" viewbox="0 0 25 16"><path d="M16.4 1.6h6.2v1.6h-6.2V1.6zM25 11h-8.1c.1 2 1 2.7 2.8 2.7 1.2 0 2.2-.4 2.4-1.1h2.5c-.9 2.7-2.5 3.4-5 3.4-3.5 0-5.7-2.4-5.7-5.9-.2-3.1 2.2-5.8 5.3-6h.4c3.7 0 5.6 3.4 5.4 6.9zm-8.1-2.3h5c-.3-1.6-1-2.2-2.5-2.2-1.3-.1-2.4.8-2.5 2.1v.1zM13 11.2c0 3.2-2.7 4.5-5.5 4.5H0V0h7.3c3 0 4.9 1.1 4.9 4 0 1.4-.8 2.7-2.1 3.3 1.8.4 3 2 2.9 3.9zM6.3 2.6H3.1v3.6h3.4c1 .2 1.9-.5 2.1-1.5v-.4C8.7 3 7.5 2.6 6.3 2.6zm.5 6H3.1v4.3h3.6c1.3 0 2.5-.4 2.5-2.1.1-1.5-.9-2.2-2.4-2.2z"/></symbol>        <symbol id="icon-brightness-high" viewbox="0 0 32 32"><path d="M30.5 17.5h-4c-.8 0-1.5-.7-1.5-1.5s.7-1.5 1.5-1.5h4c.8 0 1.5.7 1.5 1.5s-.7 1.5-1.5 1.5zM28.1 6.1l-2.7 2.7-.8.8c-.3.3-.7.4-1.1.4-.8 0-1.5-.7-1.5-1.5 0-.4.2-.8.4-1.1l.8-.8 2.7-2.7c.6-.6 1.5-.6 2.1 0 .7.6.7 1.6.1 2.2zM16 22c-2.2 0-4.2-1.2-5.2-3l-.6-1.5c-.8-3.2 1.1-6.5 4.3-7.3 3.2-.8 6.5 1.1 7.3 4.3.8 3.2-1.1 6.5-4.3 7.3-.5.1-1 .2-1.5.2zm0-9c-1.7 0-3 1.3-3 3s1.3 3 3 3 3-1.3 3-3-1.3-3-3-3zm0-6c-.8 0-1.5-.7-1.5-1.5v-4c0-.8.7-1.5 1.5-1.5s1.5.7 1.5 1.5v4c0 .8-.7 1.5-1.5 1.5zM9.6 24.6l-.8.8-2.7 2.7c-.6.6-1.5.6-2.1 0-.6-.6-.6-1.5 0-2.1l2.7-2.7.8-.8c.6-.6 1.5-.6 2.1 0s.5 1.5 0 2.1zM8.5 10c-.4 0-.8-.2-1.1-.4l-.7-.8-2.8-2.7c-.6-.6-.6-1.5 0-2.1S5.4 3.4 6 4l2.7 2.7.8.8c.3.2.5.6.5 1 0 .8-.7 1.5-1.5 1.5zm-3 4.5c.8 0 1.5.7 1.5 1.5s-.7 1.5-1.5 1.5h-4C.7 17.5 0 16.8 0 16s.7-1.5 1.5-1.5h4zM16 25c.8 0 1.5.7 1.5 1.5v4c0 .8-.7 1.5-1.5 1.5s-1.5-.7-1.5-1.5v-4c0-.8.7-1.5 1.5-1.5zm7.5-3c.4 0 .8.2 1.1.4l.8.8 2.7 2.7c.6.6.6 1.5 0 2.1s-1.5.6-2.1 0l-2.7-2.7-.8-.8c-.6-.6-.6-1.5 0-2.1.2-.2.6-.4 1-.4z"/></symbol>        <symbol id="icon-camera" viewbox="0 0 32 26"><path d="M30.5 26h-29C.7 26 0 25.3 0 24.5v-20C0 3.7.7 3 1.5 3h6.4L10.3.6c.3-.4.7-.6 1.2-.6h9c.4 0 .8.2 1.1.5L24.1 3h6.4c.8 0 1.5.7 1.5 1.5v20c0 .8-.7 1.5-1.5 1.5zM16 5c-5 0-9 4-9 9s4 9 9 9 9-4 9-9-4-9-9-9zm0 15c-3.3 0-6-2.7-6-6s2.7-6 6-6 6 2.7 6 6-2.7 6-6 6z"/></symbol>        <symbol id="icon-code" viewbox="0 0 38.4 28.8"><path d="M37.9 15.7l-7.2 7.2c-.7.7-1.9.6-2.5-.1-.6-.7-.6-1.7 0-2.4l5.9-5.9-5.9-5.9c-.7-.7-.7-1.8-.1-2.5s1.8-.7 2.5-.1l.1.1 7.1 7.1c.7.6.8 1.8.2 2.5-.1-.1-.1 0-.1 0zM16.1 27.6c-.3.9-1.4 1.4-2.3 1.1s-1.4-1.4-1.1-2.3l9.6-25.2c.3-.9 1.4-1.4 2.3-1.1s1.4 1.4 1.1 2.3l-9.6 25.2zM10.3 8.5l-5.9 5.9 5.9 5.9c.7.7.6 1.9-.1 2.5-.7.6-1.7.6-2.4 0L.6 15.6c-.7-.7-.7-1.8 0-2.5l.1-.1 7.1-7.1c.7-.7 1.8-.8 2.5-.1.7.7.8 1.8.1 2.5-.1.1-.1.2-.1.2z"/></symbol>        <symbol id="icon-facebook" viewbox="0 0 8 17"><path d="M8 0v2.7s-2-.2-2.5.6c-.2.8-.3 1.7-.2 2.6H8c-.2 1-.4 1.7-.6 2.6H5.3V17H1.6V8.5H0V5.9h1.6c0-2 .1-3.9 1-4.9C3.7-.1 4.8 0 8 0z"/></symbol>        <symbol id="icon-google-plus" viewbox="0 0 22.4 19.3"><path d="M18.9 4.8v3.4h-1.4V4.8H14V3.4h3.5V0h1.4v3.4h3.5v1.4h-3.5zM9.2 1.4c1.2.6 2 1.9 2 3.3-.1 1.2-.7 2.3-1.7 2.9-1 .7-1.1 1-1.1 1.7 0 .5 1 1.4 1.6 1.8 1.3.8 2.1 2.2 2 3.8 0 2.1-2 4.4-5.8 4.4-3.3 0-6.1-1.6-6.1-3.7s2.6-4.2 5.9-4.2h1c-.5-.4-.8-1-.8-1.6 0-.4.1-.8.3-1.1H6C3.5 8.8 1.5 7 1.4 4.6v-.2C1.4 2.1 3.8 0 6.5 0h5.9l-1.3 1.4H9.2zM6.5 11.9c-2.3 0-4.3 1.4-4.3 3 0 1.7 1.6 2.9 3.9 2.9 3.2 0 4.3-1.2 4.3-2.8 0-.2 0-.4-.1-.6-.3-1-1.1-1.4-2.4-2.3-.4-.1-.9-.2-1.4-.2zm2.6-7.2c-.3-2-1.8-3.5-3.3-3.6S3.2 2.5 3.5 4.5s1.7 3.6 3.2 3.6 2.6-1.5 2.4-3.4z"/></symbol>        <symbol id="icon-imac" viewbox="0 0 29.8 26.9"><path d="M28.3 22.1h-9.1v2.4l1.9 1.9v.5H8.6v-.5l1.9-1.9v-2.4H1.4c-.8 0-1.4-.6-1.4-1.4V1.4C0 .6.6 0 1.4 0h26.9c.8 0 1.4.6 1.4 1.4v19.2c.1.8-.6 1.5-1.4 1.5zm-.5-20.2H1.9v16.3h25.9V1.9z"/></symbol>        <symbol id="icon-linkedin" viewbox="0 0 22.4 21.3"><path d="M17.4 21.3v-7.8c0-1.6-.5-3.2-2.3-3.2s-2.7 1.6-2.7 3.2v7.7h-5V7.1h5V9c1-1.5 2.7-2.4 4.5-2.4 2.1 0 5.4 1 5.4 6.6v8.1h-4.9zM2.8 5C1.3 5.1.1 4 0 2.5.1 1 1.3-.1 2.8 0c1.5-.1 2.7 1 2.8 2.5C5.5 4 4.2 5.1 2.8 5zm2.5 16.3h-5V7.1h5v14.2z"/></symbol>        <symbol id="icon-twitter" viewbox="0 0 19.4 15.8"><path d="M13.2 0c1.2-.1 2.3.4 3.2 1.3.7-.1 1.4-.3 2-.7l.5-.3c-.2.7-.7 1.4-1.3 1.9-.1.1-.3.2-.4.3.8-.1 1.5-.3 2.3-.6-.4.6-.8 1.1-1.4 1.6l-.6.5c0 .9 0 1.7-.2 2.6-1 4.5-3.6 7.5-7.8 8.8-1.8.5-3.8.6-5.6.2-.8-.2-1.6-.4-2.3-.8-.4-.2-.8-.4-1.1-.6L0 14c.4.1.9.1 1.3 0 .4 0 .7 0 1.1-.1.8-.2 1.7-.5 2.4-.9.4-.2.8-.4 1.1-.7-.4 0-.8-.1-1.2-.2-1.2-.4-2.1-1.3-2.5-2.6.6.1 1.2.1 1.8-.1-.5 0-1-.1-1.4-.4C1.4 8.3.7 7 .8 5.6l.4.2c.2.1.5.1.8.2.2.1.4.1.5 0-.2-.2-.5-.3-.7-.6C.9 4.4.6 3.1.9 1.8c.1-.4.2-.7.4-1 .2.1.3.2.4.4.4.4.8.8 1.2 1.1 1.4 1.2 3.1 2 4.9 2.4.6.1 1.2.2 1.8.2-.2-.6-.2-1.3 0-1.9.3-1.2 1.1-2.2 2.3-2.7l.9-.3h.4z"/></symbol>        <symbol id="icon-view" viewbox="0 0 35.2 20.4"><path d="M35.2 10.3v.1c0 .3-.2.5-.4.7-.4.4-.8.9-1.2 1.3-2.2 2.3-4.7 4.2-7.5 5.7-1.8.9-3.6 1.6-5.6 2-2.1.4-4.3.4-6.4-.1-3.7-.9-7.1-2.7-10-5.2-1.4-1.1-2.7-2.3-3.8-3.7-.5-.5-.5-1.4 0-1.9.4-.4.8-.8 1.3-1.2C3.7 5.7 6.3 3.8 9 2.3c1.8-.9 3.6-1.6 5.6-2 2.1-.4 4.3-.4 6.4.1 3.7.9 7.1 2.7 10 5.2 1.4 1.1 2.7 2.3 3.8 3.7.2.2.3.5.4.7v.3c0-.1 0-.1 0 0zm-17.6-7c-3.6 0-6.6 3-6.6 6.6s3 6.6 6.6 6.6 6.6-3 6.6-6.6-2.9-6.6-6.6-6.6zm0 9.9c-1.8 0-3.3-1.5-3.3-3.3 0-1.8 1.5-3.3 3.3-3.3s3.3 1.5 3.3 3.3c0 1.8-1.5 3.3-3.3 3.3z"/></symbol>        <symbol id="icon-wifi" viewbox="0 0 31.6 28.5"><path d="M29.8 8.7c-7.8-7.6-20.2-7.6-28 0L0 6.3c8.9-8.4 22.8-8.4 31.6 0l-1.8 2.4zm-14-1.2c4.2 0 8.3 1.7 11.2 4.8l-1.9 2.4c-4.6-5.1-12.4-5.6-17.6-1-.4.3-.7.7-1 1l-1.9-2.4c2.9-3.1 7-4.8 11.2-4.8zm0 7.5c2.6 0 5 1.2 6.5 3.3l-1.7 2.1c-1.9-2.7-5.7-3.3-8.4-1.3-.5.4-.9.8-1.3 1.3l-1.7-2.1c1.6-2.1 4-3.3 6.6-3.3zm0 7.5c1.7 0 3 1.3 3 3s-1.3 3-3 3-3-1.3-3-3 1.4-3 3-3z"/></symbol>    </svg>    <header class="page-header">        <div class="page-header__inner">            <div class="page-header__top">                <a href="#" class="page-header__logo" title="Foinni">                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="137" height="36" viewbox="0 0 137 36">                        <image width="137" height="36" xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIkAAAAkCAMAAACKeOnLAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAYFBMVEUAAAAd3oUd3oUd3oUd3oUd3oUd3oUd3oUd3oUd3oUd3oUd3oUd3oX//PT//PT//PT//PT//PQd3oX//PT//PT//PT//PT//PT//PT//PT//PQd3oX//PQd3oX//PQAAABPEfU8AAAAHXRSTlMARCKIu1V3mTPd7mbMRIiq3SIR7nfMEZkzZruqVe3vVykAAAABYktHRACIBR1IAAAACXBIWXMAAAsSAAALEgHS3X78AAAAB3RJTUUH4QwJFAkD+tAhUwAAA01JREFUWMOtl9uWqjAMhkupIAcHQdTZOvj+jzlA2hwKtR3XzoVL4Kf5SNK0Veojy7S4yo0xuf6TYDZ9KEoDlh8+wjiaabbKvazXy2mqj8mCxZp24pZ/ANK4lxtwW7trkypYblaTNPfs9PVarAv7Py/P+2UMfLmWfqYJvjkqmG2op30S4Hi9Lgkk7GOyOfJ8yGJVRgVL4fggLUCOFuR1jZMUcmAz+Y6iAiSpLXORZfb2DTC68XqPk6xvt40dGNzWWUGOogLIYF0eVAkkAzqBkHy/r9NxsZs6rAMPEN3Cpvtoo704igqYwcOWbqxVcldJVkL67cClG1+jo6iA7LiZv/eF5F8aiYFXIfjwW2EFNikCshxIDp+RNEvoXVm2boJYx1mKgKz1y+RPJEpnA30ONoKSxowKnA2TLJPzi+xk752ghs8jq2LsJ5gk6hl2wtReFt8KsBWXYZL+QXe6AAmtGesnafr4VIELE9XOhqS/sDuv622XhL54HcjrFikC7MW4Asxd4gp9bRwXRzeLNt5l2xUkGv1AwJ/+zIgKUCIyJioWlqBx+dvRX4+Elo2C1R5b9KMCLBMTIum5946tioKE1pZ193OA/2zIqADLpAiRrLPmbB/c1pL52ZI8nZ/nepnL6ZgiwDLJQiQPFhL75GtLggs/ZN4wp4kCrKQhRHIRi+EP1SwnGWQ5qk2cowIsExknRgIbBHzSU644CdYjdKWj1xgSBFgmeYik52UiwDgJ1uOR+2UZjwowf00iidoncfVYqX1HuGMMCjKXP/2WhHaz7JKTOEe5cES1h4tOWFAI1B0SCILr8Op7t060jL1z5JdAiqAMk1ypgyjbXTqfxJ1n3Ad5wSc/UYFXJoLkLnaSV+oujMTtPdystFMD9l4D2w9EBV6ZCJK1g7h64BeMxPjDsEiLs11U4JWJXAHPtBeA/cFD+SST35SMi75mgU8QbA7DggTicBlVb89jfYiEWqZrH/LM/U5Q8XwFSPBkak3ESpBQjvW0a1HBvBo8mzCJRMHFkJFsDkziBDpVWUQgrQ2TqBNuZDvaUjOSYhtZlpd8iAh8Y6qf5aApD6Pr2XPc3LEtrzDm6aW4gDhUhY4INiDeCfU/WDabjgpmic644Y7yF6cN8DIDxcwMAAAAAElFTkSuQmCC">                    </image></svg>                </a>                <nav class="main-nav">                    <button class="main-nav__toggler  " type="button" id="navToggler">                        <span></span>                    </button>                    <ul class="main-nav__list" id="mainNav">                        <li class="main-nav__item  main-nav__item--active">                            <a href="#">HOME</a>                        </li>                        <li class="main-nav__item">                            <a href="#service">SERVICE</a>                        </li>                        <li class="main-nav__item">                            <a href="#team">team</a>                        </li>                        <li class="main-nav__item">                            <a href="#pricing">PRICING</a>                        </li>                        <li class="main-nav__item">                            <a href="#portfolio">PORTFOLIO</a>                        </li>                        <li class="main-nav__item">                            <a href="#contactUs">Contact us</a>                        </li>                    </ul>                </nav>            </div>            <div class="page-header__main">                <div class="page-header__text">                    <h1 class="page-header__slogan">We Love <span>FOINNI</span> Polapain</h1>                    <p>                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis n                    </p>                </div>            </div>        </div>    </header>    <section class="section" id="service">        <div class="section__inner">            <h2 class="section__header">Welcome To <span>FOINNI</span></h2>            <p class="section__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud            </p>            <ul class="service">                <li class="service__item">                    <a href="" class="service__link">                        <span class="service__icon">                            <svg width="41" height="30">                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-code"/>                             </svg>                        </span>                        <h3 class="service__title">Development</h3>                        <p class="service__desc">                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sevdent, sunt explicabo. Nemo enim ipsam voluptatem quia                        </p>                    </a>                </li>                <li class="service__item">                    <a href="" class="service__link">                        <span class="service__icon">                            <svg width="41" height="30">                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-imac"/>                              </svg>                        </span>                        <h3 class="service__title">Responsive</h3>                        <p class="service__desc">                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sevdent, sunt explicabo. Nemo enim ipsam voluptatem quia                        </p>                    </a>                </li>                <li class="service__item">                    <a href="" class="service__link">                        <span class="service__icon">                            <svg width="41" height="30">                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-wifi"/>                              </svg>                        </span>                        <h3 class="service__title">Clean Design</h3>                        <p class="service__desc">                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sevdent, sunt explicabo. Nemo enim ipsam voluptatem quia                        </p>                    </a>                </li>                <li class="service__item">                    <a href="" class="service__link">                        <span class="service__icon">                            <svg width="41" height="30">                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-view"/>                              </svg>                        </span>                        <h3 class="service__title">Graphic Design</h3>                        <p class="service__desc">                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sevdent, sunt explicabo. Nemo enim ipsam voluptatem quia                        </p>                    </a>                </li>                <li class="service__item">                    <a href="" class="service__link">                        <span class="service__icon">                            <svg width="41" height="30">                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-camera"/>                              </svg>                        </span>                        <h3 class="service__title">Photography</h3>                        <p class="service__desc">                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sevdent, sunt explicabo. Nemo enim ipsam voluptatem quia                        </p>                    </a>                </li>                <li class="service__item">                    <a href="" class="service__link">                        <span class="service__icon">                            <svg width="41" height="30">                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-brightness-high"/>                              </svg>                        </span>                        <h3 class="service__title">Photo Editing</h3>                        <p class="service__desc">                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sevdent, sunt explicabo. Nemo enim ipsam voluptatem quia                        </p>                    </a>                </li>            </ul>        </div>    </section>    <section class="section" id="team">        <div class="section__inner">            <h2 class="section__header  section__header--team">Meet Us</h2>            <ul class="team">                <li class="team__item" tabindex="0">                    <div class="team__photo">                        <img src="img/photo-1.jpg" alt="">                    </div>                    <a class="team__desc">                        <div class="team__name">Abida Foinni</div>                        <div class="team__prof">Photographer</div>                    </a>                    <ul class="social-links  social-links--teams">                        <li class="social-links__item">                            <a href="" class="social-links__link  social-links__link--white">                                <svg width="24" height="17">                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-behance"/>                                </svg>                            </a>                        </li>                        <li class="social-links__item">                            <a href="" class="social-links__link  social-links__link--white">                                <svg width="24" height="17">                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-facebook"/>                                </svg>                            </a>                        </li>                        <li class="social-links__item">                            <a href="" class="social-links__link  social-links__link--white">                                <svg width="24" height="17">                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-twitter"/>                                </svg>                            </a>                        </li>                    </ul>                </li>                <li class="team__item" tabindex="0">                    <div class="team__photo">                        <img src="img/photo-12.jpg" alt="">                    </div>                    <a class="team__desc">                        <div class="team__name">Liker Shohel</div>                        <div class="team__prof">Photographer</div>                    </a>                    <ul class="social-links  social-links--teams">                        <li class="social-links__item">                            <a href="" class="social-links__link  social-links__link--white">                                <svg width="24" height="17">                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-behance"/>                                </svg>                            </a>                        </li>                        <li class="social-links__item">                            <a href="" class="social-links__link  social-links__link--white">                                <svg width="24" height="17">                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-facebook"/>                                </svg>                            </a>                        </li>                        <li class="social-links__item">                            <a href="" class="social-links__link  social-links__link--white">                                <svg width="24" height="17">                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-twitter"/>                                </svg>                            </a>                        </li>                    </ul>                </li>                <li class="team__item" tabindex="0">                    <div class="team__photo">                        <img src="img/photo-2.jpg" alt="">                    </div>                    <a class="team__desc">                        <div class="team__name">Mahmud Koli</div>                        <div class="team__prof">Graphic Designer</div>                    </a>                    <ul class="social-links  social-links--teams">                        <li class="social-links__item">                            <a href="" class="social-links__link  social-links__link--white">                                <svg width="24" height="17">                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-behance"/>                                </svg>                            </a>                        </li>                        <li class="social-links__item">                            <a href="" class="social-links__link  social-links__link--white">                                <svg width="24" height="17">                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-facebook"/>                                </svg>                            </a>                        </li>                        <li class="social-links__item">                            <a href="" class="social-links__link  social-links__link--white">                                <svg width="24" height="17">                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-twitter"/>                                </svg>                            </a>                        </li>                    </ul>                </li>                <li class="team__item" tabindex="0">                    <div class="team__photo">                        <img src="img/photo-3.jpg" alt="">                    </div>                    <a class="team__desc">                        <div class="team__name">Jolil Shaheb</div>                        <div class="team__prof">Web Developer</div>                    </a>                    <ul class="social-links  social-links--teams">                        <li class="social-links__item">                            <a href="" class="social-links__link  social-links__link--white">                                <svg width="24" height="17">                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-behance"/>                                </svg>                            </a>                        </li>                        <li class="social-links__item">                            <a href="" class="social-links__link  social-links__link--white">                                <svg width="24" height="17">                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-facebook"/>                                </svg>                            </a>                        </li>                        <li class="social-links__item">                            <a href="" class="social-links__link  social-links__link--white">                                <svg width="24" height="17">                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-twitter"/>                                </svg>                            </a>                        </li>                    </ul>                </li>            </ul>        </div>    </section>    <section class="section" id="portfolio">        <div class="section__inner  section__inner--portfolio">        <h2 class="section__header  section__header--team">Our Latest Works</h2>        <div class="portfolio">            <ul class="portfolio__filters" id="portfolio-filters">                <li class="portfolio__filter">                    <a href="">All</a>                </li>                <li class="portfolio__filter">                    <a href="">Design</a>                </li>                <li class="portfolio__filter  portfolio__filter--active">                    <a href="">Manipulation</a>                </li>                <li class="portfolio__filter">                    <a href="">Photography </a>                </li>                <li class="portfolio__filter">                    <a href="">Development</a>                </li>            </ul>            <ul class="portfolio__list">                <li class="portfolio__item">                    <a href="" class="portfolio__link">                        <img src="img/example-1.jpg" alt="" class="portfolio__img">                    </a>                </li>                <li class="portfolio__item">                    <a href="" class="portfolio__link">                        <img src="img/example-2.jpg" alt="" class="portfolio__img">                    </a>                </li>                <li class="portfolio__item">                    <a href="" class="portfolio__link">                        <img src="img/example-3.jpg" alt="" class="portfolio__img">                    </a>                </li>                <li class="portfolio__item">                    <a href="" class="portfolio__link">                        <img src="img/example-4.jpg" alt="" class="portfolio__img">                    </a>                </li>                <li class="portfolio__item">                    <a href="" class="portfolio__link">                        <img src="img/example-5.jpg" alt="" class="portfolio__img">                    </a>                </li>                <li class="portfolio__item">                    <a href="" class="portfolio__link">                        <img src="img/example-6.jpg" alt="" class="portfolio__img">                    </a>                </li>            </ul>        </div>            <button class="btn" id="btn-portfolio-more">See More</button>        </div>    </section>    <section class="section" id="pricing">        <div class="section__inner  section__inner--pricing">            <h2 class="section__header">Our Pricing Plans</h2>            <div class="pricing">                <ul class="pricing__list">                    <li class="pricing__item">                        <h3 class="pricing__title">Basic</h3>                        <div class="pricing__amount">                            <span class="pricing__currency">$</span>                            <span class="pricing__number">20</span>                            <span class="pricing__period">/m</span>                        </div>                        <div class="desc">                            <ul class="desc__list">                                <li class="desc__item">15 projects</li>                                <li class="desc__item">30 GB Storage</li>                                <li class="desc__item">Unlimited Data Transfer</li>                                <li class="desc__item">50 GB Bandwith</li>                                <li class="desc__item">24/7 Support</li>                            </ul>                        </div>                        <button class="btn  btn--transparent">Order now</button>                    </li>                    <li class="pricing__item">                        <h3 class="pricing__title">Standart</h3>                        <div class="pricing__amount">                            <span class="pricing__currency">$</span>                            <span class="pricing__number">40</span>                            <span class="pricing__period">/m</span>                        </div>                        <div class="desc">                            <ul class="desc__list">                                <li class="desc__item">15 projects</li>                                <li class="desc__item">30 GB Storage</li>                                <li class="desc__item">Unlimited Data Transfer</li>                                <li class="desc__item">50 GB Bandwith</li>                                <li class="desc__item">24/7 Support</li>                            </ul>                        </div>                        <button class="btn  btn--transparent">Order now</button>                    </li>                    <li class="pricing__item  pricing__item--active">                        <h3 class="pricing__title">Business</h3>                        <div class="pricing__block">                            <div class="pricing__amount">                                <span class="pricing__currency">$</span>                                <span class="pricing__number">80</span>                                <span class="pricing__period">/m</span>                            </div>                            <div class="desc">                                <ul class="desc__list">                                    <li class="desc__item">15 projects</li>                                    <li class="desc__item">30 GB Storage</li>                                    <li class="desc__item">Unlimited Data Transfer</li>                                    <li class="desc__item">50 GB Bandwith</li>                                    <li class="desc__item">24/7 Support</li>                                </ul>                            </div>                            <button class="btn  btn--transparent">Order now</button>                        </div>                    </li>                    <li class="pricing__item">                        <h3 class="pricing__title">Premium</h3>                        <div class="pricing__amount">                            <span class="pricing__currency">$</span>                            <span class="pricing__number">80</span>                            <span class="pricing__period">/m</span>                        </div>                        <div class="desc">                            <ul class="desc__list">                                <li class="desc__item">15 projects</li>                                <li class="desc__item">30 GB Storage</li>                                <li class="desc__item">Unlimited Data Transfer</li>                                <li class="desc__item">50 GB Bandwith</li>                                <li class="desc__item">24/7 Support</li>                            </ul>                        </div>                        <button class="btn  btn--transparent">Order now</button>                    </li>                </ul>            </div>        </div>    </section>    <section class="contact" id="contactUs">        <div class="contact__inner">            <h3 class="contact__title">Say Hi</h3>            <form action="" class="contact__form">                <input type="text" class="contact__input" name="contact-name" placeholder="Your name">                <input type="email" class="contact__input" name="contact-email" placeholder="Your email">                <textarea name="contact-text" class="contact__textarea" placeholder="Your Message... "></textarea>                <div class="contact__btn-group">                    <button class="btn  btn--contact" type="submit">Send message</button>                </div>            </form>        </div>    </section>    <footer class="page-footer">        <div class="page-footer__inner">            <div class="page-footer__main">                <div class="page-footer__about">                    <h3 class="page-footer__title">About us</h3>                    <p class="page-footer__text">                        Lorem ipsum dolor sit amet, consectetitecto beatae vitae dicta sunt explicabo. magni dolores                        eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia                        dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempuaerat voluptatem.                    </p>                </div>                <div class="page-footer__nav">                    <h3 class="page-footer__title">Quick Links</h3>                    <ul class="submenu">                        <li class="submenu__item"><a href="" class="submenu__link">home</a></li>                        <li class="submenu__item"><a href="" class="submenu__link">Services</a></li>                        <li class="submenu__item"><a href="" class="submenu__link">Portfolio</a></li>                        <li class="submenu__item"><a href="" class="submenu__link">pricing</a></li>                        <li class="submenu__item"><a href="" class="submenu__link">contact Us</a></li>                        <li class="submenu__item"><a href="" class="submenu__link">Development</a></li>                        <li class="submenu__item"><a href="" class="submenu__link">Photography</a></li>                        <li class="submenu__item"><a href="" class="submenu__link">Design</a></li>                        <li class="submenu__item"><a href="" class="submenu__link">Manipulation</a></li>                    </ul>                </div>                <div class="page-footer__other">                    <div class="page-footer__socials">                        <h3 class="page-footer__title">Find Us On</h3>                        <ul class="social-links  social-links--footer">                            <li class="social-links__item">                                <a href="" class="social-links__link" target="_blank" rel="noopener">                                    <svg width="26" height="23">                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-facebook"/>                                    </svg>                                </a>                            </li>                            <li class="social-links__item">                                <a href="" class="social-links__link" target="_blank" rel="noopener">                                    <svg width="26" height="23">                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-twitter"/>                                    </svg>                                </a>                            </li>                            <li class="social-links__item">                                <a href="" class="social-links__link" target="_blank" rel="noopener">                                    <svg width="26" height="23">                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-google-plus"/>                                    </svg>                                </a>                            </li>                            <li class="social-links__item">                                <a href="" class="social-links__link" target="_blank" rel="noopener">                                    <svg width="26" height="23">                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-linkedin"/>                                    </svg>                                </a>                            </li>                        </ul>                    </div>                    <div class="page-footer__subscribe">                        <h3 class="page-footer__title">Subscribe Our Newsletter</h3>                        <form action="" class="page-footer__form">                            <input type="email" class="page-footer__input" placeholder="Your name">                            <button class="btn  btn--page-footer" type="submit">subscribe</button>                        </form>                    </div>                </div>            </div>        </div>        <div class="page-footer__copyright">            <p>A Design By MD. Zillur Rahman Sama</p>        </div>    </footer>    <!-- Arrow to top -->    <a class="arrow-to-up" id="toUp" href="#">        <svg version="1.1" width="40" height="40" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 100 100">            <polyline points="0,100 50,50 100,100" fill="none" stroke="black" stroke-width="10"/>        </svg>    </a>    <!-- end of Arrow to top -->    <script src="js/scripts.min.js"></script>    </body></html>
